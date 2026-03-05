@@ -1656,12 +1656,12 @@ function addFxRate(){
   var ALLOWED = ["yozora230@gmail.com", "jsraqueno2@gmail.com", "jlraqueno9@gmail.com", "jsraqueno2@hotmail.com"];
   var AUTH_KEY = '_yz_email';
   var FB_CONF = {
-    apiKey:"AIzaSyAWMP8Dq0LhthbajGV2n2Hsx0TWIB1sQAg",
-    authDomain:"yozoraasiatravelplanner.firebaseapp.com",
-    projectId:"yozoraasiatravelplanner",
-    storageBucket:"yozoraasiatravelplanner.firebasestorage.app",
-    messagingSenderId:"902226769030",
-    appId:"1:902226769030:web:8c14406657376c01458d07"
+    apiKey:"AIzaSyApaBLgSAvnC3Pmxf1aasTUhGLPY5-QXWI",
+    authDomain:"yozora-asia-2026.firebaseapp.com",
+    projectId:"yozora-asia-2026",
+    storageBucket:"yozora-asia-2026.firebasestorage.app",
+    messagingSenderId:"285910768960",
+    appId:"1:285910768960:web:9f9d5e9880739813af2ea5"
   };
 
   var db = null;
@@ -1755,20 +1755,12 @@ function addFxRate(){
         // onAuthStateChanged will fire shortly and init Firestore with valid token
       }
 
-      // Handle redirect result (called after Google redirects back)
-      firebase.auth().getRedirectResult().then(function(result) {
-        // handled by onAuthStateChanged below
-      }).catch(function() {
-        document.getElementById('auth-loading').textContent = '';
-        document.getElementById('auth-err').textContent = 'Sign-in failed. Try again.';
-      });
-
       // Sign-in button
       document.getElementById('google-signin-btn').addEventListener('click', function() {
         document.getElementById('auth-loading').textContent = 'Signing in...';
         document.getElementById('auth-err').textContent = '';
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithRedirect(provider).catch(function() {
+        firebase.auth().signInWithPopup(provider).catch(function() {
           document.getElementById('auth-loading').textContent = '';
           document.getElementById('auth-err').textContent = 'Sign-in failed. Try again.';
         });
