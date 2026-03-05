@@ -1725,10 +1725,13 @@ function addFxRate(){
     } catch(e) {}
   };
 
+  var _firestoreInit = false;
   function initFirestore() {
+    if (_firestoreInit) return;
+    _firestoreInit = true;
     try {
       db = firebase.firestore();
-      db.enablePersistence().catch(function(){});
+      // No enablePersistence - it breaks real-time onSnapshot updates
       db.collection('trips').doc('asia2026').get().then(function(doc) {
         if (doc.exists) { applyRemoteState(doc.data()); }
         else { window._fbSave(); }
