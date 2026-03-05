@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<title>🌏 Asia Trip 2026 — Jacob</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#070712;--card:#0e0e22;--card2:#141430;--border:#1e1e3a;--border2:#2a2a4a;
+  --accent:#7c3aed;--soft:#a78bfa;--glow:rgba(124,58,237,.15);
+  --teal:#0891b2;--tealS:#22d3ee;--green:#059669;--greenS:#34d399;
+  --yellow:#d97706;--yellowS:#fbbf24;--red:#dc2626;--redS:#f87171;
+  --orange:#ea580c;--orangeS:#fb923c;--pink:#be185d;--pinkS:#f472b6;
+  --text:#f1f5f9;--muted:#8892aa;--faint:#25254a;
+  --korea:#0ea5e9;--china:#ef4444;--japan:#ec4899;--thailand:#f59e0b;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+/* HEADER */
+#hdr{background:linear-gradient(135deg,#08081a 0%,#130826 50%,#08081a 100%);border-bottom:1px solid var(--border2);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.hdr-top{display:flex;align-items:center;justify-content:space-between}
+.hdr-title{font-size:17px;font-weight:900;background:linear-gradient(135deg,#a78bfa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hdr-sub{font-size:10px;color:var(--muted);margin-top:1px}
+.hdr-stats{display:flex;gap:14px;margin-top:10px;justify-content:space-around}
+.hdr-stat{text-align:center}
+.hdr-n{font-size:14px;font-weight:800;color:var(--soft)}
+.hdr-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+/* TABS */
+#tabnav{display:flex;gap:4px;padding:8px 10px;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;position:sticky;top:88px;z-index:99}
+#tabnav::-webkit-scrollbar{display:none}
+.tbtn{padding:7px 13px;border-radius:9px;border:none;cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.tbtn.on{background:linear-gradient(135deg,var(--accent),#4c1d95);color:#fff;box-shadow:0 3px 10px rgba(124,58,237,.4)}
+.tbtn.off{background:transparent;color:var(--muted)}
+/* MAIN */
+#main{padding:14px;max-width:900px;margin:0 auto;padding-bottom:60px}
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
+.card2{background:var(--card2);border:1px solid var(--border2);border-radius:10px;padding:12px}
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:500px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:360px){.g3,.g4{grid-template-columns:1fr}}
+/* INPUTS */
+input,textarea,select{background:#050510;border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:9px 12px;font-size:14px;outline:none;width:100%;font-family:inherit;box-sizing:border-box}
+textarea{resize:vertical;min-height:65px}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+select option{background:#0e0e22}
+.lbl{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;display:block}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:9px 16px;border-radius:9px;border:none;font-weight:700;font-size:13px;cursor:pointer;transition:opacity .2s}
+.btn:active{opacity:.8}
+.bp{background:linear-gradient(135deg,var(--accent),#4c1d95);color:#fff;box-shadow:0 3px 10px rgba(124,58,237,.3)}
+.bg{background:linear-gradient(135deg,var(--green),#064e3b);color:#fff}
+.br{background:linear-gradient(135deg,var(--red),#7f1d1d);color:#fff}
+.bo{background:transparent;border:1px solid var(--border2);color:var(--muted)}
+.bsm{padding:5px 10px;font-size:11px;border-radius:7px}
+/* PILL */
+.pill{display:inline-flex;align-items:center;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700;white-space:nowrap}
+/* BAR */
+.bar-w{height:6px;border-radius:6px;background:var(--faint);overflow:hidden}
+.bar-f{height:100%;border-radius:6px;transition:width .5s}
+/* SECTION */
+.stitle{font-size:14px;font-weight:800;margin-bottom:12px}
+/* ROW ITEM */
+.ri{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--card);margin-bottom:7px}
+.ri.done-row{opacity:.55}
+/* DAY BADGE */
+.dbadge{background:linear-gradient(135deg,var(--accent),#4c1d95);color:#fff;border-radius:7px;padding:3px 12px;font-size:11px;font-weight:800;flex-shrink:0;box-shadow:0 2px 8px rgba(124,58,237,.35)}
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:998;display:none}
+.modal{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-radius:20px 20px 0 0;border-top:1px solid var(--border2);padding:20px 16px 32px;z-index:999;display:none;max-height:90vh;overflow-y:auto;max-width:640px;margin:0 auto}
+.modal.show,.overlay.show{display:block}
+.modal-title{font-size:16px;font-weight:800;margin-bottom:16px}
+/* FILTER CHIPS */
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chip{padding:6px 13px;border-radius:9px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-weight:700;white-space:nowrap}
+.chip.on{background:rgba(124,58,237,.18);border-color:var(--accent);color:var(--soft)}
+/* TIMELINE */
+.tl-bar{width:3px;border-radius:2px;flex-shrink:0;align-self:stretch;margin-top:2px}
+/* COUNTRY COLORS */
+.ck{color:var(--korea)}.cc{color:var(--china)}.cj{color:var(--japan)}.ct{color:var(--thailand)}
+/* EMPTY STATE */
+.empty{text-align:center;padding:28px 16px;color:var(--muted);font-size:13px}
+/* ADD ROW FORM */
+.add-form{background:linear-gradient(135deg,rgba(124,58,237,.08),transparent);border:1px solid rgba(124,58,237,.3);border-radius:12px;padding:14px;margin-bottom:14px}
+/* STAT MINI */
+.smi{text-align:center;background:var(--card2);border-radius:10px;padding:12px 8px;border:1px solid var(--border)}
+.smi-v{font-size:18px;font-weight:800;color:var(--soft)}
+.smi-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+/* SCROLL HINT */
+.scroll-x{overflow-x:auto;scrollbar-width:none}
+.scroll-x::-webkit-scrollbar{display:none}
+/* NOTES BOX */
+.sa-item{padding:10px 12px;border-radius:9px;border:1px solid var(--border);background:var(--card2);margin-bottom:6px;cursor:pointer;transition:border-color .15s}
+.sa-item:active{opacity:.8}
+.sa-item.selected{border-color:var(--accent);background:rgba(124,58,237,.15)}
+.notes-box{font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:7px;margin-top:7px;white-space:pre-wrap;line-height:1.6}
+
+#auth-screen{position:fixed;inset:0;background:#070712;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}
+.auth-card{background:#0e0e22;border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:36px 28px;width:100%;max-width:380px;text-align:center}
+.auth-icon{font-size:48px;margin-bottom:14px}
+.auth-title{font-size:22px;font-weight:900;margin-bottom:6px;color:#e2e2f0}
+.auth-sub{font-size:13px;color:#6b7280;margin-bottom:28px;line-height:1.5}
+.auth-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#fff;color:#1f2937;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:12px}
+.auth-google-btn:active{background:#f3f4f6}
+.auth-err{color:#f87171;font-size:13px;margin-top:10px;min-height:18px}
+.auth-loading{color:#a78bfa;font-size:13px;margin-top:10px}
+
+
+.sg-arrow{display:none}
+@media(hover:hover){.sg-arrow{display:flex !important}}
+
+</style>
+</head>
+<body style="background:#070712;color:#e2e2f0">
+
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="auth-icon">🌙</div>
+    <div class="auth-title">Yozora 2026</div>
+    <div class="auth-sub">Sign in with your Google account to continue</div>
+    <button class="auth-google-btn" id="google-signin-btn">
+      <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z"/><path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2.04a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z"/><path fill="#FBBC05" d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z"/><path fill="#EA4335" d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z"/></svg>
+      Sign in with Google
+    </button>
+    <div class="auth-err" id="auth-err"></div>
+    <div class="auth-loading" id="auth-loading"></div>
+  </div>
+</div>
+<div id="hdr" style="display:none">
+  <div class="hdr-top">
+    <div>
+      <div class="hdr-title">🌏 Asia Trip 2026</div>
+      <div class="hdr-sub">Jacob · Toronto → Korea • China • Japan • Thailand</div>
+    </div>
+    <button class="btn bo bsm" onclick="resetAll()">↺ Reset</button>
+  </div>
+  <div class="hdr-stats" id="hdr-stats"></div>
+</div>
+
+<div id="tabnav" style="display:none"></div>
+<div id="main" style="display:none"></div>
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+  <div class="modal-title" id="modal-title"></div>
+  <div id="modal-body"></div>
+  <div id="modal-btns" style="display:flex;gap:8px;margin-top:16px">
+    <button class="btn bg" id="modal-save" onclick="modalSave()">Save</button>
+    <button class="btn bo" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════
+const TABS=['Dashboard','Itinerary','Schedule','Flights','Hotels','Food','To Do','Budget','Expenses','Shopping','Bookings','Packing','Contacts','Currency'];
+const TABI={Dashboard:'📊',Itinerary:'🗓️',Schedule:'⏱️',Flights:'✈️',Hotels:'🏨',Food:'🍜','To Do':'🎯',Budget:'💰',Expenses:'💸',Shopping:'🛍️',Bookings:'📋',Packing:'🧳',Contacts:'📞',Currency:'💱'};
+const CC={Korea:'var(--korea)',China:'var(--china)',Japan:'var(--japan)',Thailand:'var(--thailand)'};
+const CF={Korea:'🇰🇷',China:'🇨🇳',Japan:'🇯🇵',Thailand:'🇹🇭'};
+const CATCLR={Transit:'#6366f1',Lodging:'#8b5cf6',Activities:'#0ea5e9',Food:'#f97316',Shopping:'#ec4899',Sightseeing:'#0891b2',Concert:'#d946ef',Beach:'#06b6d4',Nature:'#10b981','Food/Market':'#ef4444',Other:'#64748b'};
+
+function mkItin(){
+  const rows=[
+    [1,'2026-04-28','Tue','Korea','Seoul','✈️ Depart Toronto YYZ 7:00AM (Air Canada)','','Arrive Seoul ICN ~4:05PM next day','Ziyolk Seoul Station','Aeroplan points flight. 49,200 pts used.'],
+    [2,'2026-04-29','Wed','Korea','Seoul','Arrive Seoul ICN 4:05PM · Check in Ziyolk Seoul Station','Explore Jung District / Namsan area','Rest / local dinner','Ziyolk Seoul Station','17 Huam-ro 60-gil, Jung District'],
+    [3,'2026-04-30','Thu','Korea','Busan','KTX Seoul → Busan 6:00AM · Haedong Yonggungsa Temple','Haeundae Beach · Sky Capsules Trail · Café itti','Gwangalli Beach sunset · Dinner Gwangalli','Lavi de Atlan Hotel 2','Check in Lavi de Atlan Hotel 2 · 37 Gunam-ro, Haeundae-gu'],
+    [4,'2026-05-01','Fri','Korea','Busan','Gamcheon Culture Village','Jagalchi Market (seafood) · BIFF Square · Huinnyeoul Culture Village','Igidae Coastal Walk · Hwangnyeongsan Mountain Lookout sunset · Dinner near hotel','Lavi de Atlan Hotel 2',''],
+    [5,'2026-05-02','Sat','Korea','Seoul','KTX Busan → Seoul 9:00AM · Check in HotelRU136','Gyeongbokgung Palace 2:30PM (Changing of Guard!) · Bukchon Hanok Village · Ikseon-dong','LoL Park · Myeongdong Night Market crawl · Optional: N Seoul Tower (last cable car 9:30PM)','HotelRU136','Free luggage storage at hotel'],
+    [6,'2026-05-03','Sun','Korea','Seoul','Leave hotel · Hongdae shopping streets','K-Pop shopping (Withmuu, Music Korea, KTOWN4U) · Lunch in Hongdae','Yeonnam-dong cafe stroll · Dinner Hongdae · Street performances','HotelRU136',''],
+    [7,'2026-05-04','Mon','Korea','Seoul','Insadong antique market & tea houses','Bukchon further exploration','','HotelRU136',''],
+    [8,'2026-05-05','Tue','China','Zhangjiajie','Pack & depart Seoul','','Flight Seoul ICN → Zhangjiajie DYG (Korean Air KE, 7:25PM dep, arr 10:00PM)','Vienna International Hotel (Zhanjiajie Tianmenshan)','Near airport and Tianmen Mountain'],
+    [9,'2026-05-06','Wed','China','Wulingyuan','Travel to Wulingyuan · Check in Zhangjiajie Wanji Hotel','Zhangjiajie National Forest Park – Avatar Hallelujah Mountain','Sunset in the forest','Zhangjiajie Wanji Hotel','Entrance of National Forest Park Wulingyuan'],
+    [10,'2026-05-07','Thu','China','Wulingyuan','Continue Zhangjiajie National Forest Park hiking','Tianmen Mountain cable car (optional)','','Zhangjiajie Wanji Hotel',''],
+    [11,'2026-05-08','Fri','China','Chongqing','Travel Wulingyuan → Chongqing · Check in Yunmu Lijin Hotel','Jiefangbei area explore','Hongya Cave illuminated at night','Chongqing Yunmu Lijin Hotel','Jiefangbei Raffles City Branch, high-altitude river view'],
+    [12,'2026-05-09','Sat','China','Chongqing','Ciqikou Ancient Town','Hongya Cave district','Night Views of Chongqing city lights','Chongqing Yunmu Lijin Hotel',''],
+    [13,'2026-05-10','Sun','China','Shanghai','Flight Chongqing CKG → Shanghai SHA (Spring Airlines, 11:25AM dep)','Arrive Shanghai 1:55PM · Check in Homeinn Selected (Nanjing Road)','The Bund evening walk · Nanjing Road','Homeinn Selected Hotel – The Bund Center','Nanjing Road Pedestrian Street, The Bund Center'],
+    [14,'2026-05-11','Mon','China','Shanghai','The Bund morning walk','Yu Garden · Old City','Nanjing Road shopping','Homeinn Selected Hotel – The Bund Center',''],
+    [15,'2026-05-12','Tue','China','Shanghai','Shanghai Museum','French Concession walk','Xintiandi dining','Homeinn Selected Hotel – The Bund Center',''],
+    [16,'2026-05-13','Wed','China','Shanghai','Tianzifang art district','','Pre-flight prep','Homeinn Selected Hotel – The Bund Center',''],
+    [17,'2026-05-14','Thu','Japan','Tokyo','Get ready for flight to Tokyo (NRT)','Flight Shanghai PVG → Tokyo NRT (Spring Airlines, 2:55PM)','Arrive Tokyo NRT 7:00PM · Check in','TBD – Tokyo',''],
+    [18,'2026-05-15','Fri','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [19,'2026-05-16','Sat','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [20,'2026-05-17','Sun','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [21,'2026-05-18','Mon','Japan','Tokyo','','','Hardcore Tano*C Zepp Tour 12AM–7PM · 17,600 JPY ≈ $154.88 CAD','TBD – Tokyo','tanoc.zaiko.io/e/tanoc2026tokyo · BOOK THIS!'],
+    [22,'2026-05-19','Tue','Japan','Osaka','Travel Tokyo → Osaka (Shinkansen)','Check in · Explore Dotonbori','Dotonbori street food crawl','TBD – Osaka',''],
+    [23,'2026-05-20','Wed','Japan','Osaka','','','','TBD – Osaka',''],
+    [24,'2026-05-21','Thu','Japan','Osaka','','','','TBD – Osaka',''],
+    [25,'2026-05-22','Fri','Japan','Tokyo','Travel back to Tokyo','','','TBD – Tokyo',''],
+    [26,'2026-05-23','Sat','Japan','Kanazawa','Travel to Kanazawa','Kenroku-en Garden','Higashi Chaya district','TBD – Kanazawa',''],
+    [27,'2026-05-24','Sun','Japan','Takayama','Travel to Takayama','Sanmachi Suji historic streets','','TBD – Takayama',''],
+    [28,'2026-05-25','Mon','Japan','Takayama','Mount Norikura','','','TBD – Takayama',''],
+    [29,'2026-05-26','Tue','Japan','Kyoto','Travel to Kyoto · Fushimi Inari','Kinkaku-ji','Gion district walk','TBD – Kyoto',''],
+    [30,'2026-05-27','Wed','Japan','Kyoto','Arashiyama Bamboo Grove','Tenryu-ji Garden','','TBD – Kyoto',''],
+    [31,'2026-05-28','Thu','Japan','Kyoto','Nijo Castle','Nishiki Market food tour','','TBD – Kyoto',''],
+    [32,'2026-05-29','Fri','Japan','Fukuoka','Travel to Fukuoka','Ohori Park','Nakasu island food stalls','TBD – Fukuoka',''],
+    [33,'2026-05-30','Sat','Japan','Fukuoka','Dazaifu Tenmangu Shrine','','','TBD – Fukuoka',''],
+    [34,'2026-05-31','Sun','Thailand','Chiang Mai','Flight to Chiang Mai','Arrive · Check in','Night Bazaar','TBD – Chiang Mai',''],
+    [35,'2026-06-01','Mon','Thailand','Chiang Mai','','','','TBD – Chiang Mai',''],
+    [36,'2026-06-02','Tue','Thailand','Chiang Mai','','','','TBD – Chiang Mai',''],
+    [37,'2026-06-03','Wed','Thailand','Chiang Mai','','','','TBD – Chiang Mai',''],
+    [38,'2026-06-04','Thu','Thailand','Bangkok','Travel to Bangkok','','','TBD – Bangkok',''],
+    [39,'2026-06-05','Fri','Thailand','Bangkok','','','','TBD – Bangkok',''],
+    [40,'2026-06-06','Sat','Thailand','Bangkok','','','','TBD – Bangkok',''],
+    [41,'2026-06-07','Sun','Japan','Tokyo','Flight back to Tokyo','','Arrive Tokyo','TBD – Tokyo',''],
+    [42,'2026-06-08','Mon','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [43,'2026-06-09','Tue','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [44,'2026-06-10','Wed','Japan','Tokyo','','','','TBD – Tokyo',''],
+    [45,'2026-06-11','Thu','Japan','Tokyo','😢 Head to Tokyo NRT for departure','Flight NRT → YYZ (EVA Air, 2:25PM)','Arrive Toronto YYZ 9:35PM','HOME 🏠','99,350 JPY = $874.28 CAD'],
+  ];
+  return rows.map(r=>({id:r[0],day:r[0],date:r[1],dow:r[2],country:r[3],city:r[4],morning:r[5],afternoon:r[6],evening:r[7],lodging:r[8],notes:r[9],done:false}));
+}
+
+function mkSched(){
+  return[
+    {id:1,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'6:00 AM',end:'9:30 AM',cat:'Transit',activity:'Seoul → Busan KTX',costLocal:0,cur:'KRW',costCad:0,reservation:true,done:false,notes:'1. KTX platform → Busan Metro signs\n2. At Busan Station (부산역) → Line 1 towards Nopo-dong\n3. One stop → Seomyeon → transfer Line 2 (direction Jangsan/Haeundae)\n4. ~10 stops → Haeundae Station\n5. Exit 3 or 5 → hotel 3–5 min walk'},
+    {id:2,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'9:30 AM',end:'10:30 AM',cat:'Lodging',activity:'Haeundae Station · Drop bags at Lavi de Atlan Hotel 2',costLocal:3400,cur:'KRW',costCad:3.16,reservation:false,done:false,notes:'37 Gunam-ro, Haeundae-gu, Busan'},
+    {id:3,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'11:00 AM',end:'1:00 PM',cat:'Activities',activity:'Haedong Yonggungsa Temple',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:4,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'1:00 PM',end:'2:00 PM',cat:'Food',activity:'Lunch near Haeundae',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:5,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'2:30 PM',end:'3:00 PM',cat:'Activities',activity:'Haeundae Beach',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:6,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'3:00 PM',end:'4:00 PM',cat:'Activities',activity:'Haeundae Blueline Park (Sky Capsules Trail)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:7,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'4:00 PM',end:'5:00 PM',cat:'Food',activity:'Café itti or Mansion 101',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'Chill café stop'},
+    {id:8,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'5:00 PM',end:'5:30 PM',cat:'Transit',activity:'Travel to Gwangalli Beach',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:9,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'5:30 PM',end:'8:00 PM',cat:'Activities',activity:'Gwangalli Beach · Sunset by the bridge',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'idk what time sunset is'},
+    {id:10,group:'Busan (Apr 30–May 2)',day:3,date:'2026-04-30',city:'Busan',start:'8:00 PM',end:'END',cat:'Food',activity:'Dinner in Gwangalli Beach area',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:11,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'9:00 AM',end:'12:00 PM',cat:'Activities',activity:'Explore Gamcheon Culture Village',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:12,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'12:00 PM',end:'1:00 PM',cat:'Food',activity:'Grab lunch in Jagalchi Market (Seafood)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:13,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'1:00 PM',end:'2:00 PM',cat:'Food',activity:'Street food and explore BIFF Square',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:14,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'2:00 PM',end:'3:00 PM',cat:'Activities',activity:'Explore Huinnyeoul Culture Village',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:15,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'4:00 PM',end:'6:00 PM',cat:'Activities',activity:'Igidae Coastal Walk and Orkyudo',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:16,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'6:30 PM',end:'8:00 PM',cat:'Activities',activity:'Hwangnyeongsan Mountain Lookout Sunset',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:17,group:'Busan (Apr 30–May 2)',day:4,date:'2026-05-01',city:'Busan',start:'8:00 PM',end:'END',cat:'Food',activity:'Head back · Dinner by hotel',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:18,group:'Busan (Apr 30–May 2)',day:5,date:'2026-05-02',city:'Busan',start:'9:00 AM',end:'11:30 AM',cat:'Transit',activity:'Checkout · KTX Busan → Seoul',costLocal:0,cur:'KRW',costCad:0,reservation:true,done:false,notes:''},
+    {id:19,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'12:30 PM',end:'1:00 PM',cat:'Lodging',activity:'Try to check in early at HotelRU136 – leave luggage if not ready',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'Free luggage storage available'},
+    {id:20,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'1:00 PM',end:'2:00 PM',cat:'Food',activity:'Grab lunch around the hotel',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:21,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'2:30 PM',end:'3:30 PM',cat:'Activities',activity:'Gyeongbokgung Palace (light visit)',costLocal:3000,cur:'KRW',costCad:2.79,reservation:false,done:false,notes:'Catch Changing of Guard at 2 PM if timing works'},
+    {id:22,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'3:30 PM',end:'4:30 PM',cat:'Activities',activity:'Bukchon Hanok Village (photos)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'15 min walk from palace'},
+    {id:23,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'4:30 PM',end:'5:30 PM',cat:'Activities',activity:'Ikseon-dong alley stroll',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'10 min walk from Bukchon – trendy hanok cafes & boutiques'},
+    {id:24,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'5:30 PM',end:'6:30 PM',cat:'Activities',activity:'LoL Park (Riot Store + PC bang)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'10 min walk from Ikseon-dong'},
+    {id:25,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'6:30 PM',end:'8:00 PM',cat:'Food',activity:'Myeongdong Night Market (street food crawl)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'15 min walk or 1 subway stop'},
+    {id:26,group:'Seoul (May 2–5)',day:5,date:'2026-05-02',city:'Seoul',start:'9:00 PM',end:'10:30 PM',cat:'Activities',activity:'Optional: N Seoul Tower city lights',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:'Last cable car 9:30 PM'},
+    {id:27,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'10:00 AM',end:'1:00 PM',cat:'Shopping',activity:'Hongdae shopping streets',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:28,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'1:00 PM',end:'2:00 PM',cat:'Food',activity:'Lunch in Hongdae',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:29,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'2:00 PM',end:'4:00 PM',cat:'Shopping',activity:'K-Pop album shopping (Withmuu, Music Korea, KTOWN4U)',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:30,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'4:00 PM',end:'5:30 PM',cat:'Activities',activity:'Yeonnam-dong cafe stroll',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:31,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'6:00 PM',end:'7:30 PM',cat:'Food',activity:'Dinner in Hongdae',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+    {id:32,group:'Seoul (May 2–5)',day:6,date:'2026-05-03',city:'Seoul',start:'7:30 PM',end:'9:00 PM',cat:'Activities',activity:'Hongdae street performances',costLocal:0,cur:'KRW',costCad:0,reservation:false,done:false,notes:''},
+  ];
+}
+
+function mkFlights(){
+  return[
+    {id:1,seg:'YYZ → ICN',from:'Toronto (YYZ)',to:'Seoul (ICN)',depDate:'2026-04-28',depTime:'7:00 AM',arrDate:'2026-04-29',arrTime:'4:05 PM',airline:'Air Canada',flightNo:'',stops:1,duration:'20h05m',priceLocal:76.23,cur:'CAD',priceCad:76.23,bags:0,refundable:'Yes, with fee',selected:true,booked:true,notes:'Purchased with 49,200 Aeroplan points. Original price $380 but used TD points on Expedia.'},
+    {id:2,seg:'ICN → DYG',from:'Seoul (ICN)',to:'Zhangjiajie (DYG)',depDate:'2026-05-05',depTime:'7:25 PM',arrDate:'2026-05-05',arrTime:'10:00 PM',airline:'Korean Air',flightNo:'',stops:0,duration:'3h35m',priceLocal:234,cur:'CAD',priceCad:234,bags:1,refundable:'',selected:true,booked:true,notes:''},
+    {id:3,seg:'CKG → SHA',from:'Chongqing (CKG)',to:'Shanghai (SHA)',depDate:'2026-05-10',depTime:'11:25 AM',arrDate:'2026-05-10',arrTime:'1:55 PM',airline:'Spring Airlines',flightNo:'',stops:0,duration:'2h30m',priceLocal:152.40,cur:'USD',priceCad:210.31,bags:1,refundable:'',selected:false,booked:false,notes:'Watch for deals – this flight can go down to $71–83 CAD'},
+    {id:4,seg:'PVG → NRT',from:'Shanghai (PVG)',to:'Tokyo (NRT)',depDate:'2026-05-14',depTime:'2:55 PM',arrDate:'2026-05-14',arrTime:'7:00 PM',airline:'Spring Airlines',flightNo:'',stops:0,duration:'3h05m',priceLocal:116.80,cur:'USD',priceCad:161.18,bags:0,refundable:'',selected:true,booked:true,notes:''},
+    {id:5,seg:'NRT → YYZ',from:'Tokyo (NRT)',to:'Toronto (YYZ)',depDate:'2026-06-11',depTime:'2:25 PM',arrDate:'2026-06-11',arrTime:'9:35 PM',airline:'EVA Air',flightNo:'',stops:1,duration:'20h10m',priceLocal:99350,cur:'JPY',priceCad:874.28,bags:2,refundable:'',selected:true,booked:true,notes:''},
+  ];
+}
+
+function mkHotels(){
+  return[
+    {id:1,property:'Ziyolk Seoul Station',city:'Seoul',country:'Korea',area:'Jung District',type:'Private Twin Room',ci:'2026-04-29',co:'2026-04-30',nights:1,ppn:78.65,cur:'CAD',total:78.65,cancelBy:'2026-04-27',pros:'5-10 min walk from Seoul Station',cons:'Small, just to sleep',address:'17 Huam-ro 60-gil, Jung District, Seoul',selected:true,booked:true,notes:''},
+    {id:2,property:'Lavi de Atlan Hotel 2',city:'Busan',country:'Korea',area:'Haeundae',type:'Private Twin Room',ci:'2026-04-30',co:'2026-05-02',nights:2,ppn:96.88,cur:'CAD',total:193.76,cancelBy:'2026-04-29',pros:'By Haeundae beach, sea view, near all the itinerary',cons:'',address:'37 Gunam-ro, Haeundae-gu, Busan',selected:true,booked:true,notes:''},
+    {id:3,property:'HotelRU136',city:'Seoul',country:'Korea',area:'Central Seoul',type:'Private Double',ci:'2026-05-02',co:'2026-05-05',nights:3,ppn:77.50,cur:'CAD',total:232.50,cancelBy:'2026-04-29',pros:'',cons:'',address:'Seoul, South Korea',selected:true,booked:true,notes:'Free luggage storage'},
+    {id:4,property:'Vienna International Hotel (Zhanjiajie Tianmenshan)',city:'Zhangjiajie',country:'China',area:'Tianmenshan',type:'Private Twin Room',ci:'2026-05-05',co:'2026-05-06',nights:1,ppn:27.94,cur:'CAD',total:27.94,cancelBy:'2026-05-04',pros:'Near airport and Tianmen Mountain',cons:'',address:'Zhangjiajie, China',selected:true,booked:true,notes:''},
+    {id:5,property:'Zhangjiajie Wanji Hotel',city:'Wulingyuan',country:'China',area:'Wulingyuan',type:'Private Queen Room',ci:'2026-05-06',co:'2026-05-08',nights:2,ppn:42.89,cur:'CAD',total:85.78,cancelBy:'2026-05-06',pros:'Entrance of National Forest Park Wulingyuan',cons:'',address:'Wulingyuan, Zhangjiajie, China',selected:true,booked:true,notes:''},
+    {id:6,property:'Chongqing Yunmu Lijin Hotel (Jiefangbei Raffles City)',city:'Chongqing',country:'China',area:'Jiefangbei',type:'Private Queen Room',ci:'2026-05-08',co:'2026-05-10',nights:2,ppn:61.50,cur:'CAD',total:123.00,cancelBy:'2026-05-08',pros:'High-altitude river view',cons:'',address:'Jiefangbei Raffles City Branch, Chongqing',selected:true,booked:true,notes:''},
+    {id:7,property:'Homeinn Selected Hotel (Nanjing Road · The Bund)',city:'Shanghai',country:'China',area:'The Bund',type:'Private Queen Room',ci:'2026-05-10',co:'2026-05-14',nights:4,ppn:73.59,cur:'CAD',total:294.36,cancelBy:'2026-05-10',pros:'',cons:'',address:'Nanjing Road Pedestrian Street, The Bund Center, Shanghai',selected:true,booked:true,notes:''},
+  ];
+}
+
+function mkFood(){
+  return[
+    {id:1,country:'Korea',city:'Busan',name:'Geumsubokguk, Haeundae',cuisine:'Pufferfish Soup',neighborhood:'Haeundae',address:'23 Jungdong 1-ro 43beon-gil, Haeundae-gu, Busan',mustTry:true,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+    {id:2,country:'Korea',city:'Busan',name:'Ireok',cuisine:'Beef bone soup',neighborhood:'Haeundae',address:'51 Marine city 3-ro, Haeundae-gu, Busan',mustTry:false,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+    {id:3,country:'Korea',city:'Busan',name:'Bonjeon Dwaeji Gukbap',cuisine:'Pork bone broth',neighborhood:'Dong-gu',address:'3-8 Jungang-daero 214beon-gil, Dong-gu, Busan',mustTry:false,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+    {id:4,country:'Korea',city:'Busan',name:'ヨンジンテジクッパ',cuisine:'Pork bone broth',neighborhood:'Saha-gu',address:'39 Hasinbeonyeong-ro 157beon-gil, Saha-gu, Busan',mustTry:false,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+    {id:5,country:'Korea',city:'Busan',name:'Cheombeong',cuisine:'Seafood',neighborhood:'Suyeong-gu',address:'16 Millak-ro 33beon-gil, Suyeong-gu, Busan',mustTry:false,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+    {id:6,country:'Korea',city:'Busan',name:'엄용백돼지국밥 본점 (Umyongbaek)',cuisine:'Pork noodles',neighborhood:'Suyeong-gu',address:'39 Suyeong-ro 680beon-gil, Suyeong-gu, Busan',mustTry:false,reservation:false,status:'Saved',estSpend:0,cur:'KRW',notes:''},
+  ];
+}
+
+function mkTodos(){
+  return[
+    {id:1,country:'Korea',city:'Busan',activity:'Haedong Yonggungsa Temple',cat:'Sightseeing',duration:'2',bestTime:'Morning',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:2,country:'Korea',city:'Busan',activity:'Haeundae Beach',cat:'Beach',duration:'2-3',bestTime:'Afternoon',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:3,country:'Korea',city:'Busan',activity:'Huinnyeoul Culture Village',cat:'Sightseeing',duration:'1-2',bestTime:'Anytime',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:4,country:'Korea',city:'Busan',activity:'Gamcheon Culture Village',cat:'Sightseeing',duration:'2-3',bestTime:'Morning',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:5,country:'Korea',city:'Busan',activity:'Skyline Luge',cat:'Activities',duration:'1-2',bestTime:'Anytime',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:6,country:'Korea',city:'Busan',activity:'Oryukdo Skywalk',cat:'Sightseeing',duration:'1',bestTime:'Anytime',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:7,country:'Korea',city:'Busan',activity:'Busan Sky Capsules (Haeundae Blueline Park)',cat:'Activities',duration:'1',bestTime:'Afternoon',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:8,country:'Korea',city:'Busan',activity:'Jagalchi Market (Seafood)',cat:'Food/Market',duration:'1-2',bestTime:'Morning',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:9,country:'Korea',city:'Busan',activity:'Dakbatgol Mural Village',cat:'Sightseeing',duration:'1',bestTime:'Anytime',mustBook:false,priority:'Low',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:10,country:'Korea',city:'Busan',activity:'Hwangnyeongsan Mountain Lookout',cat:'Nature',duration:'2-3',bestTime:'Sunset',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:11,country:'Korea',city:'Busan',activity:'Mansion 101 café',cat:'Food/Market',duration:'1',bestTime:'Afternoon',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:12,country:'Korea',city:'Busan',activity:'Gwangalli Beach',cat:'Beach',duration:'2-3',bestTime:'Sunset',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:13,country:'Korea',city:'Busan',activity:'Café itti',cat:'Food/Market',duration:'1',bestTime:'Afternoon',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:14,country:'Korea',city:'Busan',activity:'Igidae Coastal Walk',cat:'Nature',duration:'2-3',bestTime:'Morning',mustBook:false,priority:'High',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:15,country:'Korea',city:'Busan',activity:'BIFF Square',cat:'Sightseeing',duration:'1-2',bestTime:'Evening',mustBook:false,priority:'Medium',costLocal:0,cur:'KRW',costCad:0,done:false,notes:''},
+    {id:16,country:'Japan',city:'Tokyo',activity:'Hardcore Tano*C Zepp Tour',cat:'Concert',duration:'5-6',bestTime:'12am–7pm (May 18)',mustBook:true,priority:'High',costLocal:17600,cur:'JPY',costCad:154.88,done:false,notes:'tanoc.zaiko.io/e/tanoc2026tokyo — BOOK ASAP'},
+  ];
+}
+
+function mkBudget(){
+  return[
+    {id:1,cat:'Flights',icon:'✈️',planned:0,actual:1345.69,notes:'Selected flights total'},
+    {id:2,cat:'Lodging',icon:'🏨',planned:0,actual:1035.99,notes:'All 7 hotels booked'},
+    {id:3,cat:'Food',icon:'🍜',planned:0,actual:0,notes:''},
+    {id:4,cat:'Transit',icon:'🚆',planned:0,actual:0,notes:''},
+    {id:5,cat:'Activities',icon:'🎯',planned:0,actual:0,notes:''},
+    {id:6,cat:'Shopping',icon:'🛍️',planned:0,actual:0,notes:''},
+    {id:7,cat:'SIM/Connectivity',icon:'📱',planned:0,actual:0,notes:''},
+    {id:8,cat:'Insurance',icon:'🛡️',planned:0,actual:0,notes:''},
+    {id:9,cat:'Visa/Fees',icon:'📋',planned:0,actual:0,notes:''},
+    {id:10,cat:'Misc',icon:'🔧',planned:0,actual:0,notes:''},
+  ];
+}
+
+
+const SCHED_GROUPS=[
+  {name:'Seoul – Arrival (Apr 28–30)',city:'Seoul',country:'Korea',days:[{day:1,date:'2026-04-28',dow:'Tue'},{day:2,date:'2026-04-29',dow:'Wed'}]},
+  {name:'Busan (Apr 30–May 2)',city:'Busan',country:'Korea',days:[{day:3,date:'2026-04-30',dow:'Thu'},{day:4,date:'2026-05-01',dow:'Fri'},{day:5,date:'2026-05-02',dow:'Sat'}]},
+  {name:'Seoul (May 2–5)',city:'Seoul',country:'Korea',days:[{day:5,date:'2026-05-02',dow:'Sat'},{day:6,date:'2026-05-03',dow:'Sun'},{day:7,date:'2026-05-04',dow:'Mon'}]},
+  {name:'Zhangjiajie (May 5–6)',city:'Zhangjiajie',country:'China',days:[{day:8,date:'2026-05-05',dow:'Tue'}]},
+  {name:'Wulingyuan (May 6–8)',city:'Wulingyuan',country:'China',days:[{day:9,date:'2026-05-06',dow:'Wed'},{day:10,date:'2026-05-07',dow:'Thu'}]},
+  {name:'Chongqing (May 8–10)',city:'Chongqing',country:'China',days:[{day:11,date:'2026-05-08',dow:'Fri'},{day:12,date:'2026-05-09',dow:'Sat'}]},
+  {name:'Shanghai (May 10–14)',city:'Shanghai',country:'China',days:[{day:13,date:'2026-05-10',dow:'Sun'},{day:14,date:'2026-05-11',dow:'Mon'},{day:15,date:'2026-05-12',dow:'Tue'},{day:16,date:'2026-05-13',dow:'Wed'}]},
+  {name:'Tokyo – Part 1 (May 14–18)',city:'Tokyo',country:'Japan',days:[{day:17,date:'2026-05-14',dow:'Thu'},{day:18,date:'2026-05-15',dow:'Fri'},{day:19,date:'2026-05-16',dow:'Sat'},{day:20,date:'2026-05-17',dow:'Sun'},{day:21,date:'2026-05-18',dow:'Mon'}]},
+  {name:'Osaka (May 19–21)',city:'Osaka',country:'Japan',days:[{day:22,date:'2026-05-19',dow:'Tue'},{day:23,date:'2026-05-20',dow:'Wed'},{day:24,date:'2026-05-21',dow:'Thu'}]},
+  {name:'Kanazawa (May 23)',city:'Kanazawa',country:'Japan',days:[{day:26,date:'2026-05-23',dow:'Sat'}]},
+  {name:'Takayama (May 24–25)',city:'Takayama',country:'Japan',days:[{day:27,date:'2026-05-24',dow:'Sun'},{day:28,date:'2026-05-25',dow:'Mon'}]},
+  {name:'Kyoto (May 26–28)',city:'Kyoto',country:'Japan',days:[{day:29,date:'2026-05-26',dow:'Tue'},{day:30,date:'2026-05-27',dow:'Wed'},{day:31,date:'2026-05-28',dow:'Thu'}]},
+  {name:'Fukuoka (May 29–30)',city:'Fukuoka',country:'Japan',days:[{day:32,date:'2026-05-29',dow:'Fri'},{day:33,date:'2026-05-30',dow:'Sat'}]},
+  {name:'Chiang Mai (May 31–Jun 3)',city:'Chiang Mai',country:'Thailand',days:[{day:34,date:'2026-05-31',dow:'Sun'},{day:35,date:'2026-06-01',dow:'Mon'},{day:36,date:'2026-06-02',dow:'Tue'},{day:37,date:'2026-06-03',dow:'Wed'}]},
+  {name:'Bangkok (Jun 4–6)',city:'Bangkok',country:'Thailand',days:[{day:38,date:'2026-06-04',dow:'Thu'},{day:39,date:'2026-06-05',dow:'Fri'},{day:40,date:'2026-06-06',dow:'Sat'}]},
+  {name:'Tokyo – Final (Jun 7–11)',city:'Tokyo',country:'Japan',days:[{day:41,date:'2026-06-07',dow:'Sun'},{day:42,date:'2026-06-08',dow:'Mon'},{day:43,date:'2026-06-09',dow:'Tue'},{day:44,date:'2026-06-10',dow:'Wed'},{day:45,date:'2026-06-11',dow:'Thu'}]}
+];
+const TIME_OPTIONS=['6:00 AM','6:30 AM','7:00 AM','7:30 AM','8:00 AM','8:30 AM','9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','6:30 PM','7:00 PM','7:30 PM','8:00 PM','8:30 PM','9:00 PM','9:30 PM','10:00 PM','10:30 PM','11:00 PM','11:30 PM'];
+
+const DEFAULTS={
+  tab:'Dashboard',
+  itin:mkItin(),
+  sched:mkSched(),
+  flights:mkFlights(),
+  hotels:mkHotels(),
+  food:mkFood(),
+  todos:mkTodos(),
+  budget:mkBudget(),
+  expenses:[],
+  shopping:[],
+  bookings:[],
+  packing:[],
+  contacts:[],
+  fx:[
+    {id:1,code:'CAD',name:'Canadian Dollar',rate:1.0},
+    {id:2,code:'KRW',name:'Korean Won',rate:0.0009},
+    {id:3,code:'JPY',name:'Japanese Yen',rate:0.0088},
+    {id:4,code:'CNY',name:'Chinese Yuan',rate:0.2},
+    {id:5,code:'USD',name:'US Dollar',rate:1.38},
+    {id:6,code:'THB',name:'Thai Baht',rate:0.039},
+  ],
+  schedGroup:'Seoul – Arrival (Apr 28–30)',
+  itinFilter:'All',
+  foodFilter:'All',
+  todoFilter:'All',
+  hotelFilter:'All',
+  shopFilter:'All',
+};
+
+// ════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════
+let S=(()=>{
+  try{
+    const d=localStorage.getItem('asiatrip26v3');
+    if(!d)return JSON.parse(JSON.stringify(DEFAULTS));
+    const loaded=JSON.parse(d);
+    // Merge any new default fields that didn't exist in old saves
+    const merged={...JSON.parse(JSON.stringify(DEFAULTS)),...loaded};
+    // Ensure filter fields always exist
+    if(!merged.foodFilter)merged.foodFilter='All';
+    if(!merged.todoFilter)merged.todoFilter='All';
+    if(!merged.hotelFilter)merged.hotelFilter='All';
+    if(!merged.shopFilter)merged.shopFilter='All';
+    if(!merged.schedGroup)merged.schedGroup='Seoul – Arrival (Apr 28–30)';
+    if(!Array.isArray(merged.sched))merged.sched=[];
+    return merged;
+  }
+  catch(e){return JSON.parse(JSON.stringify(DEFAULTS));}
+})();
+
+function save(){try{localStorage.setItem('asiatrip26v3',JSON.stringify(S));}catch(e){}try{if(window._fbSave)window._fbSave();}catch(e){}}
+function resetAll(){if(window.confirm('Reset ALL data to defaults?')){localStorage.removeItem('asiatrip26v3');S=JSON.parse(JSON.stringify(DEFAULTS));renderAll();}}
+function uid(){return Date.now()+Math.random().toString(36).slice(2);}
+
+// ════════════════════════════════════════════════
+// MODAL
+// ════════════════════════════════════════════════
+let modalCallback=null;
+function openModal(title,bodyHtml,saveFn){
+  document.getElementById('modal-title').textContent=title;
+  document.getElementById('modal-body').innerHTML=bodyHtml;
+  modalCallback=saveFn;
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('modal').classList.remove('show');
+  modalCallback=null;
+  window._modalCb=null;
+}
+function modalSave(){if(typeof _modalCb!=="undefined"&&_modalCb)_modalCb();else if(modalCallback)modalCallback();}
+function gv(id){const el=document.getElementById(id);return el?el.value:'';}
+function gc(id){const el=document.getElementById(id);return el?el.checked:false;}
+
+// ════════════════════════════════════════════════
+// UTILS
+// ════════════════════════════════════════════════
+function pill(t,c,bg){return`<span class="pill" style="background:${bg||c+'22'};color:${c};border:1px solid ${c}44">${t}</span>`;}
+function bar(p,c,h=6){const pct=Math.min(p,100);const col=p>100?'var(--red)':p>80?'var(--yellow)':c;return`<div class="bar-w" style="height:${h}px"><div class="bar-f" style="width:${pct}%;background:${col}"></div></div>`;}
+function cc(country){return CC[country]||'var(--soft)';}
+function cf(country){return CF[country]||'🌍';}
+function fmtCAD(v){return'$'+Number(v||0).toFixed(2);}
+function rowBtns(delFn,editFn){return`<div style="display:flex;gap:5px;flex-shrink:0"><button class="btn bo bsm" onclick="${editFn}">Edit</button><button class="btn br bsm" onclick="${delFn}">✕</button></div>`;}
+
+
+function cityChips(filterKey, setter, items, getCityFn) {
+  const cities = ['All', ...[...new Set(items.map(getCityFn).filter(Boolean))].sort()];
+  return `<div class="chips" style="margin-bottom:12px">${cities.map(c => `<button class="chip ${S[filterKey]===c?'on':''}" onclick="${setter}('${c.replace(/'/g,"\\'")}')">${c}</button>`).join('')}</div>`;
+}
+function escHTML(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// ════════════════════════════════════════════════
+// RENDERS
+// ════════════════════════════════════════════════
+function renderAll(){
+  renderHeader();
+  renderTabNav();
+  renderMain();
+}
+
+function renderHeader(){
+  const flightTotal=S.flights.filter(f=>f.selected).reduce((a,f)=>a+f.priceCad,0);
+  const hotelTotal=S.hotels.filter(h=>h.selected).reduce((a,h)=>a+h.total,0);
+  const packed=S.packing.filter(p=>p.packed).length;
+  document.getElementById('hdr-stats').innerHTML=
+    ['Apr 28–Jun 11, 2026','45 Days',`$${(flightTotal+hotelTotal).toFixed(0)} CAD`,`${packed}/${S.packing.length} Packed`]
+    .map((v,i)=>`<div class="hdr-stat"><div class="hdr-n">${v}</div><div class="hdr-l">${['Dates','Duration','Committed','Packing'][i]}</div></div>`).join('');
+}
+
+function renderTabNav(){
+  document.getElementById('tabnav').innerHTML=TABS.map(t=>
+    `<button class="tbtn ${S.tab===t?'on':'off'}" onclick="setTab('${t}')">${TABI[t]} ${t}</button>`
+  ).join('');
+}
+
+function setTab(t){S.tab=t;save();renderTabNav();renderMain();}
+
+function renderMain(){
+  const m=document.getElementById('main');
+  const fns={Dashboard:dashHTML,Itinerary:itinHTML,Schedule:schedHTML,Flights:flightsHTML,Hotels:hotelsHTML,Food:foodHTML,'To Do':todoHTML,Budget:budgetHTML,Expenses:expensesHTML,Shopping:shoppingHTML,Bookings:bookingsHTML,Packing:packingHTML,Contacts:contactsHTML,Currency:currencyHTML};
+  m.innerHTML=(fns[S.tab]||dashHTML)();
+}
+
+// ─── DASHBOARD ────────────────────────────────
+function dashHTML(){
+  const flightTotal=S.flights.filter(f=>f.selected).reduce((a,f)=>a+f.priceCad,0);
+  const hotelTotal=S.hotels.filter(h=>h.selected).reduce((a,f)=>a+f.total,0);
+  const totalActual=S.budget.reduce((a,b)=>a+b.actual,0);
+  const totalPlanned=S.budget.reduce((a,b)=>a+b.planned,0);
+  const packed=S.packing.filter(p=>p.packed).length;
+  const todoDone=S.todos.filter(t=>t.done).length;
+  const expenses=S.expenses.reduce((a,e)=>a+Number(e.amtCad||0),0);
+
+  const kpis=[
+    {v:'45 Days',l:'Trip Length',c:'var(--soft)'},
+    {v:fmtCAD(flightTotal),l:'Flights (selected)',c:'var(--tealS)'},
+    {v:fmtCAD(hotelTotal),l:'Hotels (booked)',c:'var(--greenS)'},
+    {v:fmtCAD(expenses||totalActual),l:'Total Logged',c:'var(--yellowS)'},
+  ];
+
+  const route=[
+    {c:'Korea',cities:'Seoul → Busan → Seoul',dates:'Apr 28 – May 5',days:7},
+    {c:'China',cities:'Zhangjiajie → Wulingyuan → Chongqing → Shanghai',dates:'May 5 – 14',days:9},
+    {c:'Japan',cities:'Tokyo → Osaka → Kanazawa → Takayama → Kyoto → Fukuoka',dates:'May 14 – May 30',days:16},
+    {c:'Thailand',cities:'Chiang Mai → Bangkok',dates:'May 31 – Jun 6',days:7},
+    {c:'Japan',cities:'Tokyo (final days)',dates:'Jun 7 – 11',days:5},
+  ];
+
+  return`
+  <div style="background:rgba(8,145,178,.12);border:1px solid rgba(34,211,238,.25);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;line-height:1.6;color:var(--tealS)">
+    📱 <b>iPhone Offline:</b> AirDrop this file to iPhone → Files app → tap Share → <b>Open in Safari</b>. All your data saves automatically in Safari and works completely offline!
+  </div>
+  <div class="card" style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(8,145,178,.06));border-color:rgba(124,58,237,.3)">
+    <div style="font-size:18px;font-weight:900;margin-bottom:4px">Korea 🇰🇷 • China 🇨🇳 • Japan 🇯🇵 • Thailand 🇹🇭</div>
+    <div style="color:var(--muted);font-size:12px">Jacob · Toronto → Asia · Apr 28 – Jun 11, 2026 · 45 days</div>
+    <div class="g4" style="margin-top:14px">
+      ${kpis.map(k=>`<div class="smi" style="border-color:${k.c}28"><div class="smi-v" style="color:${k.c}">${k.v}</div><div class="smi-l">${k.l}</div></div>`).join('')}
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="stitle">🗺️ Trip Route</div>
+      ${route.map((r,i)=>`
+        <div onclick="setTab('Itinerary')" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:${cc(r.c)}0d;border:1px solid ${cc(r.c)}22;margin-bottom:7px;cursor:pointer">
+          <span style="font-size:18px">${cf(r.c)}</span>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:12px;color:${cc(r.c)}">${r.c}</div>
+            <div style="font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.cities}</div>
+            <div style="font-size:10px;color:var(--muted)">${r.dates}</div>
+          </div>
+          ${pill(r.days+'d',cc(r.c))}
+        </div>`).join('')}
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card">
+        <div class="stitle">✈️ Flights ${pill(S.flights.filter(f=>f.booked).length+'/'+S.flights.length+' Booked','var(--greenS)')}</div>
+        ${S.flights.map(f=>`
+          <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;background:${f.booked?'rgba(5,150,105,.08)':'rgba(217,119,6,.08)'};border:1px solid ${f.booked?'rgba(52,211,153,.3)':'rgba(251,191,36,.3)'};margin-bottom:5px">
+            <span style="width:14px;height:14px;border-radius:50%;background:${f.booked?'var(--green)':'var(--yellow)'};display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">${f.booked?'✓':'?'}</span>
+            <div style="flex:1;font-size:11px"><b>${f.seg}</b><span style="color:var(--muted)"> · ${f.depDate}</span></div>
+            <span style="font-size:11px;font-weight:700;color:var(--soft)">${fmtCAD(f.priceCad)}</span>
+          </div>`).join('')}
+        <div style="text-align:right;font-size:11px;font-weight:800;color:var(--soft);margin-top:4px">Selected total: ${fmtCAD(flightTotal)} CAD</div>
+      </div>
+
+      <div class="card">
+        <div class="stitle">📊 Quick Stats</div>
+        <div class="g2">
+          ${[
+            {i:'🏨',l:'Hotels Booked',v:`${S.hotels.filter(h=>h.booked).length}/${S.hotels.length}`},
+            {i:'🍜',l:'Food Spots',v:S.food.length},
+            {i:'🎯',l:'Activities',v:`${todoDone}/${S.todos.length} done`},
+            {i:'🧳',l:'Packing',v:S.packing.length?`${packed}/${S.packing.length}`:'Empty'},
+          ].map(k=>`<div class="smi"><div style="font-size:16px">${k.i}</div><div class="smi-v" style="font-size:15px">${k.v}</div><div class="smi-l">${k.l}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="stitle">🏨 Accommodations — ${fmtCAD(hotelTotal)} CAD total</div>
+    <div class="g2">
+      ${S.hotels.map(h=>`
+        <div class="card2" style="border-color:${cc(h.country)}28">
+          <div style="font-weight:700;font-size:12px;margin-bottom:2px">${h.property}</div>
+          <div style="font-size:10px;color:var(--muted)">${cf(h.country)} ${h.city} · ${h.ci} → ${h.co} · ${h.nights}N</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+            <span style="font-weight:800;color:var(--greenS);font-size:13px">${fmtCAD(h.total)}</span>
+            ${pill('Booked ✓','var(--greenS)')}
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+// ─── ITINERARY ───────────────────────────────
+function itinHTML(){
+  const countries=['All','Korea','China','Japan','Thailand'];
+  const f=S.itinFilter||'All';
+  const shown=f==='All'?S.itin:S.itin.filter(i=>i.country===f);
+
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">45-Day Itinerary</div>
+    <button class="btn bp bsm" onclick="addItinDay()">+ Add Day</button>
+  </div>
+  <div class="chips">
+    ${countries.map(c=>`<button class="chip ${f===c?'on':''}" onclick="setItinFilter('${c}')">${CF[c]||'🌍'} ${c}</button>`).join('')}
+  </div>
+  ${shown.map(d=>{
+    const col=cc(d.country);
+    return`
+    <div class="card" style="border-color:${d.done?'rgba(52,211,153,.35)':''};opacity:${d.done?.7:1};margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span class="dbadge">Day ${d.day}</span>
+        <span style="font-size:11px;color:var(--muted)">${d.date} ${d.dow}</span>
+        ${pill(cf(d.country)+' '+d.country,col)}
+        ${pill(d.city,col)}
+        ${d.done?pill('✓ Done','var(--greenS)'):''}
+        <div style="margin-left:auto;display:flex;gap:5px">
+          <button class="btn bo bsm" onclick="editItin(${d.id})">Edit</button>
+          <button class="btn bo bsm" style="color:${d.done?'var(--greenS)':'var(--muted)'}" onclick="toggleItinDone(${d.id})">${d.done?'Undo':'Done'}</button>
+        </div>
+      </div>
+      <div class="g3" style="gap:8px">
+        ${[['🌅 Morning',d.morning],['☀️ Afternoon',d.afternoon],['🌙 Evening',d.evening]].map(([lbl,val])=>`
+          <div class="card2" style="min-height:50px">
+            <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">${lbl}</div>
+            <div style="font-size:12px;color:${val?'var(--text)':'var(--faint)'};line-height:1.5">${val||'—'}</div>
+          </div>`).join('')}
+      </div>
+      ${d.lodging?`<div style="font-size:11px;color:var(--muted);margin-top:8px">🏨 ${d.lodging}</div>`:''}
+      ${d.notes?`<div class="notes-box">💡 ${d.notes}</div>`:''}
+    </div>`;
+  }).join('')}`;
+}
+
+function setItinFilter(f){S.itinFilter=f;save();renderMain();}
+function toggleItinDone(id){S.itin=S.itin.map(i=>i.id===id?{...i,done:!i.done}:i);save();renderMain();}
+
+function editItin(id){
+  const d=S.itin.find(i=>i.id===id);
+  if(!d)return;
+  openModal('Edit Day '+d.day,`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Country</label><input id="ei-country" value="${d.country}"></div>
+      <div><label class="lbl">City</label><input id="ei-city" value="${d.city}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Morning</label><textarea id="ei-morning">${d.morning||''}</textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Afternoon</label><textarea id="ei-afternoon">${d.afternoon||''}</textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Evening</label><textarea id="ei-evening">${d.evening||''}</textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Lodging</label><input id="ei-lodging" value="${d.lodging||''}"></div>
+    <div><label class="lbl">Notes</label><textarea id="ei-notes">${d.notes||''}</textarea></div>
+  `,()=>{
+    S.itin=S.itin.map(i=>i.id===id?{...i,country:gv('ei-country'),city:gv('ei-city'),morning:gv('ei-morning'),afternoon:gv('ei-afternoon'),evening:gv('ei-evening'),lodging:gv('ei-lodging'),notes:gv('ei-notes')}:i);
+    save();closeModal();renderMain();
+  });
+}
+
+function addItinDay(){
+  const nextDay=S.itin.length+1;
+  openModal('Add Itinerary Day',`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Day #</label><input id="ni-day" value="${nextDay}" type="number"></div>
+      <div><label class="lbl">Date</label><input id="ni-date" type="date"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Country</label><select id="ni-country"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+      <div><label class="lbl">City</label><input id="ni-city"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Morning</label><textarea id="ni-morning"></textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Afternoon</label><textarea id="ni-afternoon"></textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Evening</label><textarea id="ni-evening"></textarea></div>
+    <div style="margin-bottom:8px"><label class="lbl">Lodging</label><input id="ni-lodging"></div>
+    <div><label class="lbl">Notes</label><textarea id="ni-notes"></textarea></div>
+  `,()=>{
+    const dows=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const dt=new Date(gv('ni-date'));
+    S.itin.push({id:uid(),day:Number(gv('ni-day')),date:gv('ni-date'),dow:dows[dt.getDay()]||'',country:gv('ni-country'),city:gv('ni-city'),morning:gv('ni-morning'),afternoon:gv('ni-afternoon'),evening:gv('ni-evening'),lodging:gv('ni-lodging'),notes:gv('ni-notes'),done:false});
+    S.itin.sort((a,b)=>a.day-b.day);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── SCHEDULE ────────────────────────────────
+function schedHTML(){
+  const curGroup=SCHED_GROUPS.find(g=>g.name===S.schedGroup)||SCHED_GROUPS[0];
+  const col=cc(curGroup.country);
+  return`
+  <div style="font-weight:800;font-size:15px;margin-bottom:12px">⏱️ Schedule</div>
+  <div style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);border-radius:10px;padding:10px 13px;margin-bottom:12px;font-size:12px;color:var(--soft)">
+    💡 <b>Smart Add:</b> Tap <b>➕ Add Entry</b> under any day → pick a time → choose from your saved Activities, Food or Shopping → auto-fills everything!
+  </div>
+  <div style="margin-bottom:14px">
+    <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">City Group</div>
+    <div style="position:relative;margin-bottom:4px"><button onclick="var e=document.getElementById('sg-inner');e.scrollBy({left:-200,behavior:'smooth'})" style="display:none;position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.85);color:#fff;border:none;cursor:pointer;font-size:18px;z-index:5;align-items:center;justify-content:center;padding:0" class="sg-arrow">&#8249;</button><div id="sg-inner" style="overflow-x:auto;display:flex;gap:6px;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+      ${SCHED_GROUPS.map(g=>{const cnt=S.sched.filter(s=>s.group===g.name).length;return`<button onclick="setSchedGroup('${g.name.replace(/'/g,"\\'")}') " style="flex-shrink:0;padding:8px 14px;border-radius:10px;border:1px solid ${S.schedGroup===g.name?'var(--accent)':'var(--border2)'};background:${S.schedGroup===g.name?'rgba(124,58,237,.2)':'var(--card2)'};color:${S.schedGroup===g.name?'var(--soft)':'var(--muted)'};cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap">${cf(g.country)} ${g.name}${cnt?` <span style="background:var(--accent);color:#fff;border-radius:5px;padding:1px 5px;font-size:9px">${cnt}</span>`:''}</button>`;}).join('')}
+    </div><button onclick="var e=document.getElementById('sg-inner');e.scrollBy({left:200,behavior:'smooth'})" style="display:none;position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.85);color:#fff;border:none;cursor:pointer;font-size:18px;z-index:5;align-items:center;justify-content:center;padding:0" class="sg-arrow">&#8250;</button></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+    <div style="font-weight:800;font-size:14px;color:${col}">${cf(curGroup.country)} ${curGroup.name}</div>
+    ${pill(curGroup.city,col)}
+  </div>
+  ${curGroup.days.map(d=>{
+    const dayItems=S.sched.filter(s=>s.group===curGroup.name&&s.day===d.day).sort((a,b)=>{
+      const tm=t=>{if(!t||t==='END')return 1440;const[hm,ap]=t.split(' ');const[h,m]=hm.split(':').map(Number);return(h===12?0:h)*(ap==='PM'?1:-1)*-60+h*60+m+(ap==='PM'?720:0);};
+      return tm(a.start)-tm(b.start);
+    });
+    return`
+    <div style="background:var(--card2);border:1px solid var(--border2);border-radius:12px;margin-bottom:14px;overflow:hidden">
+      <div style="background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(8,145,178,.09));padding:12px 14px;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="dbadge">Day ${d.day}</span>
+        <div><div style="font-size:13px;font-weight:800">${d.date} · ${d.dow}</div><div style="font-size:11px;color:var(--muted)">${curGroup.city}</div></div>
+        <div style="margin-left:auto"><button class="btn bp bsm" onclick="openSmartAdd(${d.day},'${d.date}','${d.dow}')">➕ Add Entry</button></div>
+      </div>
+      <div style="padding:12px 14px">
+        ${dayItems.length===0?`<div style="text-align:center;padding:16px 0;color:var(--muted);font-size:12px">No entries yet · tap ➕ Add Entry above</div>`:
+        dayItems.map(item=>{
+          const col2=CATCLR[item.cat]||'var(--soft)';
+          return`
+          <div class="ri ${item.done?'done-row':''}" style="border-color:${item.done?'rgba(52,211,153,.25)':'var(--border)'};margin-bottom:6px">
+            <div style="min-width:70px;flex-shrink:0;text-align:center">
+              <div style="font-size:12px;font-weight:800;color:var(--tealS)">${item.start}</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:1px">${item.end==='END'?'↓ end':item.end?'→ '+item.end:''}</div>
+            </div>
+            <div class="tl-bar" style="background:${col2}"></div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px">
+                ${pill(item.cat,col2)}
+                ${item.reservation?pill('✓ Reserved','var(--yellowS)'):''}
+                ${item.costCad>0?pill('~'+fmtCAD(item.costCad),'var(--greenS)'):''}
+              </div>
+              <div style="font-weight:700;font-size:13px;text-decoration:${item.done?'line-through':''}">${item.activity}</div>
+              ${item.notes?`<div class="notes-box">${item.notes}</div>`:''}
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px;flex-shrink:0">
+              <button class="btn bo bsm" onclick="editSchedItem('${item.id}')">Edit</button>
+              <button class="btn bo bsm" style="color:${item.done?'var(--greenS)':'var(--muted)'}" onclick="toggleSchedDone('${item.id}')">${item.done?'Undo':'✓'}</button>
+              <button class="btn br bsm" onclick="delSchedItem('${item.id}')">✕</button>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('')}`;
+}
+
+function setSchedGroup(name){S.schedGroup=name;save();renderMain();setTimeout(function(){var el=document.getElementById('sg-inner');if(el){var i=SCHED_GROUPS.findIndex(function(g){return g.name===name;});var btns=el.querySelectorAll('button');if(btns[i])btns[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}},60);}
+function toggleSchedDone(id){S.sched=S.sched.map(s=>s.id===id?{...s,done:!s.done}:s);save();renderMain();}
+function delSchedItem(id){if(window.confirm('Delete?')){S.sched=S.sched.filter(s=>s.id!==id);save();renderMain();}}
+
+// ─── SMART ADD ────────────────────────────────
+let _sa={day:0,date:'',dow:'',group:'',city:'',country:'',tab:'activities',sel:null,startTime:'',endTime:''};
+
+function openSmartAdd(day,date,dow){
+  const grp=SCHED_GROUPS.find(g=>g.name===S.schedGroup)||SCHED_GROUPS[0];
+  const group=grp.name, city=grp.city, country=grp.country;
+  _sa={day,date,dow,group,city,country,tab:'activities',sel:null,startTime:'9:00 AM',endTime:''};
+  document.getElementById('modal-title').textContent='➕ Add to Day '+day+' — '+city+' · '+date;
+  document.getElementById('modal-body').innerHTML=smartAddBody();
+  document.getElementById('modal-btns').style.display='flex';
+  window._modalCb=doSmartSave;
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('modal').classList.add('show');
+}
+
+function smartAddBody(){
+  const tab=_sa.tab;const city=_sa.city;
+  let actItems=S.todos.filter(t=>!t.done&&t.city===city);
+  if(!actItems.length)actItems=S.todos.filter(t=>!t.done&&t.country===_sa.country);
+  let foodItems=S.food.filter(f=>f.city===city);
+  if(!foodItems.length)foodItems=S.food.filter(f=>f.country===_sa.country);
+  let shopItems=S.shopping.filter(s=>s.city===city);
+  const timeOpts=TIME_OPTIONS.map(t=>`<option ${_sa.startTime===t?'selected':''}>${t}</option>`).join('');
+  const endOpts='<option value="">TBD</option>'+TIME_OPTIONS.map(t=>`<option ${_sa.endTime===t?'selected':''}>${t}</option>`).join('')+'<option value="END">END of day</option>';
+  let listHTML='';
+  const sel=_sa.sel;
+  if(tab==='activities'){
+    listHTML=actItems.length?actItems.map(t=>{const isSel=sel&&sel.srcId==t.id&&sel.srcType==='activity';return`<div class="sa-item${isSel?' selected':''}" onclick="saPickItem('activity','${t.id}')"><div style="font-weight:700;font-size:13px">${t.activity}</div><div style="font-size:11px;color:var(--muted)">${t.cat}${t.city?' · '+t.city:''} ${t.duration?'· '+t.duration+'h':''}</div>${t.bestTime?`<div style="font-size:10px;color:var(--tealS)">⏰ Best: ${t.bestTime}</div>`:''}${t.mustBook?`<div style="font-size:10px;color:var(--redS)">📋 Book first!</div>`:''}</div>`;}).join(''):`<div class="empty" style="padding:16px 0">No activities for ${city} yet.<br>Add them in <b>To Do</b> tab!</div>`;
+  } else if(tab==='food'){
+    listHTML=foodItems.length?foodItems.map(f=>{const isSel=sel&&sel.srcId==f.id&&sel.srcType==='food';return`<div class="sa-item${isSel?' selected':''}" onclick="saPickItem('food','${f.id}')"><div style="font-weight:700;font-size:13px">${f.mustTry?'⭐ ':''}${f.name}</div><div style="font-size:11px;color:var(--orangeS)">${f.cuisine}</div>${f.address?`<div style="font-size:10px;color:var(--muted)">📍 ${f.address}</div>`:''}</div>`;}).join(''):`<div class="empty" style="padding:16px 0">No food spots for ${city} yet.<br>Add them in <b>Food</b> tab!</div>`;
+  } else if(tab==='shopping'){
+    listHTML=shopItems.length?shopItems.map(s=>{const isSel=sel&&sel.srcId==s.id&&sel.srcType==='shopping';return`<div class="sa-item${isSel?' selected':''}" onclick="saPickItem('shopping','${s.id}')"><div style="font-weight:700;font-size:13px">${s.item}</div><div style="font-size:11px;color:var(--muted)">${s.cat||''}${s.where?' @ '+s.where:''}</div></div>`;}).join(''):`<div class="empty" style="padding:16px 0">No shopping items for ${city}.<br>Add them in <b>Shopping</b> tab!</div>`;
+  }
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:14px">
+      <div><label class="lbl">Start Time</label><select id="sa-start" onchange="_sa.startTime=this.value">${timeOpts}</select></div>
+      <div><label class="lbl">End Time</label><select id="sa-end" onchange="_sa.endTime=this.value">${endOpts}</select></div>
+    </div>
+    <div style="margin-bottom:10px">
+      <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">Pick from saved items · ${city}</div>
+      <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+        ${[['activities','🎯 Activities'],['food','🍜 Food'],['shopping','🛍️ Shopping'],['manual','✏️ Manual']].map(([t,lbl])=>`<button onclick="saSetTab('${t}')" style="padding:6px 12px;border-radius:8px;border:1px solid ${tab===t?'var(--accent)':'var(--border2)'};background:${tab===t?'rgba(124,58,237,.2)':'transparent'};color:${tab===t?'var(--soft)':'var(--muted)'};font-size:11px;font-weight:700;cursor:pointer">${lbl}</button>`).join('')}
+      </div>
+      ${tab!=='manual'?`<div style="max-height:180px;overflow-y:auto">${listHTML}</div>`:''}
+    </div>
+    <div style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);border-radius:10px;padding:12px">
+      <div style="font-size:10px;color:var(--soft);font-weight:700;text-transform:uppercase;margin-bottom:10px">Entry Details ${sel?'<span style=\"color:var(--greenS)\">✓ Auto-filled</span>':''}</div>
+      <div style="margin-bottom:8px"><label class="lbl">Activity / Name *</label><input id="sa-act" placeholder="What are you doing?" value="${sel?sel.name.replace(/"/g,'&quot;'):''}"></div>
+      <div class="g2" style="gap:8px;margin-bottom:8px">
+        <div><label class="lbl">Category</label><select id="sa-cat">${['Activities','Food','Shopping','Transit','Lodging','Sightseeing','Concert','Nature','Other'].map(c=>`<option ${sel&&sel.cat===c?'selected':''}>${c}</option>`).join('')}</select></div>
+        <div><label class="lbl">Currency</label><select id="sa-cur">${S.fx.map(f=>`<option>${f.code}</option>`).join('')}</select></div>
+      </div>
+      <div style="margin-bottom:8px"><label class="lbl">Cost (Local)</label><input id="sa-costl" type="number" value="${sel?sel.cost:0}"></div>
+      <div style="margin-bottom:8px"><label class="lbl">Notes / Address</label><textarea id="sa-notes" style="min-height:50px">${sel?(sel.notes||'').replace(/</g,'&lt;'):''}</textarea></div>
+      <div style="display:flex;align-items:center;gap:8px"><input type="checkbox" id="sa-res" ${sel&&sel.reservation?'checked':''}><label style="font-size:12px;color:var(--muted)">Has Reservation?</label></div>
+    </div>`;
+}
+
+function saSetTab(tab){
+  _sa.startTime=document.getElementById('sa-start')?.value||_sa.startTime;
+  _sa.endTime=document.getElementById('sa-end')?.value||_sa.endTime;
+  _sa.tab=tab;
+  document.getElementById('modal-body').innerHTML=smartAddBody();
+}
+
+function saPickItem(type,id){
+  _sa.startTime=document.getElementById('sa-start')?.value||_sa.startTime;
+  _sa.endTime=document.getElementById('sa-end')?.value||_sa.endTime;
+  let sel=null;
+  if(type==='activity'){const t=S.todos.find(t=>t.id==id);if(t){const cm={Sightseeing:'Sightseeing',Activities:'Activities',Nature:'Nature',Beach:'Activities',Concert:'Concert','Food/Market':'Food',Shopping:'Shopping',Other:'Other'};sel={srcId:t.id,srcType:'activity',name:t.activity,cat:cm[t.cat]||'Activities',cost:t.costLocal||0,cur:t.cur||'KRW',notes:t.notes||'',reservation:t.mustBook||false};}}
+  else if(type==='food'){const f=S.food.find(f=>f.id==id);if(f){sel={srcId:f.id,srcType:'food',name:f.name,cat:'Food',cost:f.estSpend||0,cur:f.cur||'KRW',notes:(f.address?'📍 '+f.address:'')+(f.notes?'\n'+f.notes:''),reservation:f.reservation||false};}}
+  else if(type==='shopping'){const s=S.shopping.find(s=>s.id==id);if(s){sel={srcId:s.id,srcType:'shopping',name:s.item+(s.where?' @ '+s.where:''),cat:'Shopping',cost:s.priceLocal||0,cur:s.cur||'CAD',notes:s.notes||'',reservation:false};}}
+  if(sel){_sa.sel=sel;document.getElementById('modal-body').innerHTML=smartAddBody();}
+}
+
+function doSmartSave(){
+  const act=document.getElementById('sa-act')?.value?.trim();
+  if(!act){alert('Please enter an activity name!');return;}
+  const cur=document.getElementById('sa-cur')?.value||'KRW';
+  const rate=(S.fx.find(f=>f.code===cur)||{rate:1}).rate;
+  const costL=Number(document.getElementById('sa-costl')?.value||0);
+  const cat=document.getElementById('sa-cat')?.value||'Activities';
+  const res=document.getElementById('sa-res')?.checked||false;
+  const notes=document.getElementById('sa-notes')?.value||'';
+  const start=document.getElementById('sa-start')?.value||'9:00 AM';
+  const end=document.getElementById('sa-end')?.value||'';
+  S.sched.push({id:uid(),group:_sa.group,day:_sa.day,date:_sa.date,city:_sa.city,start,end:end||'TBD',cat,activity:act,costLocal:costL,cur,costCad:Math.round(costL*rate*100)/100,reservation:res,done:false,notes});
+  save();closeModal();renderMain();
+}
+
+function addSchedGroup(){var n=window.prompt('Group name:');if(n){S.schedGroup=n;save();renderMain();}}
+
+function schedForm(item){
+  const cats=['Transit','Lodging','Activities','Food','Shopping','Sightseeing','Concert','Nature','Other'];
+  const timeOpts=TIME_OPTIONS.map(t=>`<option ${item?.start===t?'selected':''}>${t}</option>`).join('');
+  const endOpts='<option value="" '+(!item?.end||item.end==='TBD'?'selected':'')+'}>TBD</option>'+TIME_OPTIONS.map(t=>`<option ${item?.end===t?'selected':''}>${t}</option>`).join('')+'<option value="END" '+(item?.end==='END'?'selected':'')+'>END of day</option>';
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Start Time</label><select id="sf-start">${timeOpts}</select></div>
+      <div><label class="lbl">End Time</label><select id="sf-end">${endOpts}</select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Activity</label><input id="sf-act" value="${(item?.activity||'').replace(/"/g,'&quot;')}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><select id="sf-cat">${cats.map(c=>`<option ${item?.cat===c?'selected':''}>${c}</option>`).join('')}</select></div>
+      <div><label class="lbl">Currency</label><select id="sf-cur">${S.fx.map(f=>`<option ${item?.cur===f.code?'selected':''}>${f.code}</option>`).join('')}</select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Cost (Local)</label><input id="sf-costl" type="number" value="${item?.costLocal||0}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Notes</label><textarea id="sf-notes">${(item?.notes||'').replace(/</g,'&lt;')}</textarea></div>
+    <div style="display:flex;align-items:center;gap:8px"><input type="checkbox" id="sf-res" ${item?.reservation?'checked':''}><label style="font-size:12px;color:var(--muted)">Has Reservation?</label></div>`;
+}
+
+function editSchedItem(id){
+  const item=S.sched.find(s=>s.id===id);if(!item)return;
+  openModal('Edit Entry',schedForm(item),()=>{
+    const cur=gv('sf-cur');const rate=(S.fx.find(f=>f.code===cur)||{rate:1}).rate;
+    const costL=Number(gv('sf-costl'));
+    S.sched=S.sched.map(s=>s.id===id?{...s,start:gv('sf-start'),end:gv('sf-end')||'TBD',cat:gv('sf-cat'),activity:gv('sf-act'),costLocal:costL,cur,costCad:Math.round(costL*rate*100)/100,reservation:gc('sf-res'),notes:gv('sf-notes')}:s);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── FLIGHTS ─────────────────────────────────
+function flightsHTML(){
+  const total=S.flights.filter(f=>f.selected).reduce((a,f)=>a+f.priceCad,0);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">✈️ Flight Options</div>
+    <button class="btn bp bsm" onclick="addFlight()">+ Add</button>
+  </div>
+  <div class="g4" style="margin-bottom:14px">
+    ${[
+      {v:fmtCAD(total),l:'Selected Total'},
+      {v:S.flights.filter(f=>f.booked).length+'/'+S.flights.length,l:'Booked'},
+      {v:S.flights.filter(f=>f.selected).length,l:'Selected'},
+      {v:S.flights.length,l:'Options'},
+    ].map(k=>`<div class="smi"><div class="smi-v">${k.v}</div><div class="smi-l">${k.l}</div></div>`).join('')}
+  </div>
+  ${S.flights.map(f=>`
+    <div class="card" style="margin-bottom:10px;border-color:${f.booked?'rgba(52,211,153,.25)':f.selected?'rgba(167,139,250,.25)':'var(--border)'}">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+            <span style="font-size:15px;font-weight:900">${f.from}</span>
+            <span style="color:var(--muted);font-size:12px">✈️ ${f.duration} ·  ${f.stops} stop${f.stops!==1?'s':''}</span>
+            <span style="font-size:15px;font-weight:900">${f.to}</span>
+          </div>
+          <div style="font-size:12px;color:var(--muted)">📅 ${f.depDate} ${f.depTime} → ${f.arrDate} ${f.arrTime} · ${f.airline}</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:17px;font-weight:800;color:var(--soft)">${fmtCAD(f.priceCad)}</div>
+          <div style="font-size:10px;color:var(--muted)">${f.priceLocal} ${f.cur}</div>
+          <div style="margin-top:4px;display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap">
+            ${f.booked?pill('Booked ✓','var(--greenS)'):''}
+            ${f.selected&&!f.booked?pill('Selected','var(--soft)'):''}
+          </div>
+        </div>
+      </div>
+      ${f.notes?`<div style="font-size:11px;color:var(--muted);background:var(--card2);padding:8px 10px;border-radius:8px;margin-bottom:8px">💡 ${f.notes}</div>`:''}
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="btn bo bsm" onclick="editFlight('${f.id}')">Edit</button>
+        <button class="btn bsm" style="background:${f.selected?'rgba(109,40,217,.2)':'rgba(109,40,217,.6)'};color:#fff;border:none" onclick="toggleFlightSel('${f.id}')">${f.selected?'Deselect':'Select'}</button>
+        <button class="btn bsm" style="background:${f.booked?'rgba(5,150,105,.2)':'rgba(5,150,105,.6)'};color:#fff;border:none" onclick="toggleFlightBooked('${f.id}')">${f.booked?'Unbook':'Mark Booked'}</button>
+        <button class="btn br bsm" onclick="delFlight('${f.id}')">✕</button>
+      </div>
+    </div>`).join('')}`;
+}
+
+function toggleFlightSel(id){S.flights=S.flights.map(f=>f.id==id?{...f,selected:!f.selected}:f);save();renderHeader();renderMain();}
+function toggleFlightBooked(id){S.flights=S.flights.map(f=>f.id==id?{...f,booked:!f.booked}:f);save();renderMain();}
+function delFlight(id){if(window.confirm('Delete?')){S.flights=S.flights.filter(f=>f.id!=id);save();renderMain();}}
+
+function flightForm(f){
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">From</label><input id="ff-from" value="${f?.from||''}"></div>
+      <div><label class="lbl">To</label><input id="ff-to" value="${f?.to||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Depart Date</label><input id="ff-depdate" type="date" value="${f?.depDate||''}"></div>
+      <div><label class="lbl">Depart Time</label><input id="ff-deptime" value="${f?.depTime||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Arrive Date</label><input id="ff-arrdate" type="date" value="${f?.arrDate||''}"></div>
+      <div><label class="lbl">Arrive Time</label><input id="ff-arrtime" value="${f?.arrTime||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Airline</label><input id="ff-airline" value="${f?.airline||''}"></div>
+      <div><label class="lbl">Duration</label><input id="ff-dur" value="${f?.duration||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Price (Local)</label><input id="ff-pricel" type="number" value="${f?.priceLocal||0}"></div>
+      <div><label class="lbl">Currency</label><select id="ff-cur"><option>CAD</option><option>USD</option><option>JPY</option><option>KRW</option><option>CNY</option></select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Price (CAD)</label><input id="ff-pricecad" type="number" value="${f?.priceCad||0}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Notes</label><textarea id="ff-notes">${f?.notes||''}</textarea></div>`;
+}
+
+function addFlight(){
+  openModal('Add Flight',flightForm(null),()=>{
+    S.flights.push({id:uid(),seg:gv('ff-from').split('(')[0].trim()+'→'+gv('ff-to').split('(')[0].trim(),from:gv('ff-from'),to:gv('ff-to'),depDate:gv('ff-depdate'),depTime:gv('ff-deptime'),arrDate:gv('ff-arrdate'),arrTime:gv('ff-arrtime'),airline:gv('ff-airline'),stops:0,duration:gv('ff-dur'),priceLocal:Number(gv('ff-pricel')),cur:gv('ff-cur'),priceCad:Number(gv('ff-pricecad')),bags:0,selected:false,booked:false,notes:gv('ff-notes')});
+    save();closeModal();renderMain();
+  });
+}
+
+function editFlight(id){
+  const f=S.flights.find(f=>f.id==id);if(!f)return;
+  openModal('Edit Flight',flightForm(f),()=>{
+    S.flights=S.flights.map(fl=>fl.id==id?{...fl,from:gv('ff-from'),to:gv('ff-to'),depDate:gv('ff-depdate'),depTime:gv('ff-deptime'),arrDate:gv('ff-arrdate'),arrTime:gv('ff-arrtime'),airline:gv('ff-airline'),duration:gv('ff-dur'),priceLocal:Number(gv('ff-pricel')),cur:gv('ff-cur'),priceCad:Number(gv('ff-pricecad')),notes:gv('ff-notes')}:fl);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── HOTELS ──────────────────────────────────
+function hotelsHTML(){
+  const total=S.hotels.filter(h=>h.selected).reduce((a,h)=>a+h.total,0);
+  const flt=S.hotelFilter||'All';
+  const shown=flt==='All'?S.hotels:S.hotels.filter(h=>h.city===flt);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">🏨 Accommodations</div>
+    <button class="btn bp bsm" onclick="addHotel()">+ Add</button>
+  </div>
+  <div class="g4" style="margin-bottom:14px">
+    ${[{v:fmtCAD(total),l:'Booked Total'},{v:S.hotels.filter(h=>h.booked).length+'/'+S.hotels.length,l:'Booked'},{v:S.hotels.reduce((a,h)=>a+h.nights,0),l:'Total Nights'},{v:S.hotels.length,l:'Properties'}].map(k=>`<div class="smi"><div class="smi-v">${k.v}</div><div class="smi-l">${k.l}</div></div>`).join('')}
+  </div>
+  ${cityChips('hotelFilter','setHotelFilter',S.hotels,h=>h.city)}
+  ${shown.map(h=>`
+    <div class="card" style="margin-bottom:10px;border-color:${cc(h.country)}22">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <span style="font-size:28px;flex-shrink:0">${cf(h.country)}</span>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:15px;font-weight:800;margin-bottom:2px">${h.property}</div>
+          <div style="font-size:12px;color:var(--muted)">${h.city} · ${h.area||''} · ${h.type||''}</div>
+          <div style="font-size:12px;color:var(--tealS);margin-top:4px">📅 ${h.ci} → ${h.co} · ${h.nights} nights</div>
+          ${h.cancelBy?`<div style="font-size:11px;color:var(--redS)">⚠️ Cancel by ${h.cancelBy}</div>`:''}
+          ${h.pros?`<div style="font-size:11px;color:var(--greenS);margin-top:3px">✅ ${h.pros}</div>`:''}
+          ${h.cons?`<div style="font-size:11px;color:var(--redS)">❌ ${h.cons}</div>`:''}
+          ${h.address?`<div style="font-size:10px;color:var(--muted);margin-top:3px">📍 ${h.address}</div>`:''}
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:18px;font-weight:800;color:var(--soft)">${fmtCAD(h.total)}</div>
+          <div style="font-size:10px;color:var(--muted)">${fmtCAD(h.ppn)}/night</div>
+          ${pill(h.booked?'Booked ✓':'Not Booked',h.booked?'var(--greenS)':'var(--redS)')}
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+        <button class="btn bo bsm" onclick="editHotel('${h.id}')">Edit</button>
+        <button class="btn bsm" style="background:${h.booked?'rgba(5,150,105,.2)':'rgba(5,150,105,.6)'};color:#fff;border:none" onclick="toggleHotelBooked('${h.id}')">${h.booked?'Unbook':'Mark Booked'}</button>
+        <button class="btn br bsm" onclick="delHotel('${h.id}')">✕</button>
+      </div>
+    </div>`).join('')}`;
+}
+function setHotelFilter(f){S.hotelFilter=f;save();renderMain();}
+function toggleHotelBooked(id){S.hotels=S.hotels.map(h=>h.id==id?{...h,booked:!h.booked}:h);save();renderMain();}
+function delHotel(id){if(window.confirm('Delete?')){S.hotels=S.hotels.filter(h=>h.id!=id);save();renderMain();}}
+
+function hotelForm(h){
+  return`
+    <div style="margin-bottom:8px"><label class="lbl">Property Name</label><input id="hf-name" value="${h?.property||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Country</label><select id="hf-country"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+      <div><label class="lbl">City</label><input id="hf-city" value="${h?.city||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Check-in</label><input id="hf-ci" type="date" value="${h?.ci||''}"></div>
+      <div><label class="lbl">Check-out</label><input id="hf-co" type="date" value="${h?.co||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Price/Night (CAD)</label><input id="hf-ppn" type="number" step="0.01" value="${h?.ppn||0}"></div>
+      <div><label class="lbl">Cancel By</label><input id="hf-cancel" type="date" value="${h?.cancelBy||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Area/Type</label><input id="hf-area" value="${h?.area||''} ${h?.type||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Pros</label><input id="hf-pros" value="${h?.pros||''}"></div>
+      <div><label class="lbl">Cons</label><input id="hf-cons" value="${h?.cons||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Address</label><input id="hf-addr" value="${h?.address||''}"></div>
+    <div><label class="lbl">Notes</label><textarea id="hf-notes">${h?.notes||''}</textarea></div>`;
+}
+
+function addHotel(){
+  openModal('Add Hotel',hotelForm(null),()=>{
+    const ci=new Date(gv('hf-ci'));const co=new Date(gv('hf-co'));const nights=Math.round((co-ci)/86400000)||1;
+    const ppn=Number(gv('hf-ppn'));
+    S.hotels.push({id:uid(),property:gv('hf-name'),country:gv('hf-country'),city:gv('hf-city'),area:'',type:'',ci:gv('hf-ci'),co:gv('hf-co'),nights,ppn,cur:'CAD',total:ppn*nights,cancelBy:gv('hf-cancel'),pros:gv('hf-pros'),cons:gv('hf-cons'),address:gv('hf-addr'),notes:gv('hf-notes'),selected:false,booked:false});
+    save();closeModal();renderMain();
+  });
+}
+
+function editHotel(id){
+  const h=S.hotels.find(h=>h.id==id);if(!h)return;
+  openModal('Edit Hotel',hotelForm(h),()=>{
+    const ci=new Date(gv('hf-ci'));const co=new Date(gv('hf-co'));const nights=Math.round((co-ci)/86400000)||1;const ppn=Number(gv('hf-ppn'));
+    S.hotels=S.hotels.map(ht=>ht.id==id?{...ht,property:gv('hf-name'),country:gv('hf-country'),city:gv('hf-city'),ci:gv('hf-ci'),co:gv('hf-co'),nights,ppn,total:ppn*nights,cancelBy:gv('hf-cancel'),pros:gv('hf-pros'),cons:gv('hf-cons'),address:gv('hf-addr'),notes:gv('hf-notes')}:ht);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── FOOD ────────────────────────────────────
+function foodHTML(){
+  const flt=S.foodFilter||'All';
+  const shown=flt==='All'?S.food:S.food.filter(r=>r.city===flt);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">🍜 Food & Restaurants</div>
+    <button class="btn bp bsm" onclick="addFood()">+ Add</button>
+  </div>
+  <div style="font-size:12px;color:var(--muted);margin-bottom:10px">${S.food.length} saved · Filter by city:</div>
+  ${cityChips('foodFilter','setFoodFilter',S.food,r=>r.city)}
+  ${shown.length===0?`<div class="empty">No food spots${flt!=='All'?' for '+flt:''} yet.</div>`:''}
+  ${shown.map(f=>`
+    <div class="ri" style="margin-bottom:7px">
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:3px">
+          ${pill(cf(f.country)+' '+f.city,cc(f.country))}
+          ${f.mustTry?pill('⭐ Must Try','var(--yellowS)'):''}
+        </div>
+        <div style="font-weight:800;font-size:14px;margin-bottom:2px">${f.name}</div>
+        <div style="font-size:12px;color:var(--orangeS)">${f.cuisine}</div>
+        ${f.neighborhood?`<div style="font-size:11px;color:var(--muted)">${f.neighborhood}</div>`:''}
+        ${f.address?`<div style="font-size:10px;color:var(--muted);margin-top:2px">📍 ${f.address}</div>`:''}
+        ${f.notes?`<div class="notes-box">${f.notes}</div>`:''}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0">
+        ${pill(f.status||'Saved','var(--tealS)')}
+        ${f.mustTry?pill('Must Try!','var(--yellowS)'):''}
+        <div style="display:flex;gap:4px;margin-top:2px">
+          <button class="btn bo bsm" onclick="editFood('${f.id}')">Edit</button>
+          <button class="btn br bsm" onclick="delFood('${f.id}')">✕</button>
+        </div>
+      </div>
+    </div>`).join('')}`;
+}
+function setFoodFilter(f){S.foodFilter=f;save();renderMain();}
+function delFood(id){if(window.confirm('Delete?')){S.food=S.food.filter(f=>f.id!=id);save();renderMain();}}
+function foodForm(f){
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Country</label><select id="rfc"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+      <div><label class="lbl">City</label><input id="rf-city" value="${f?.city||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Restaurant Name</label><input id="rf-name" value="${f?.name||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Cuisine/Type</label><input id="rf-cuisine" value="${f?.cuisine||''}"></div>
+      <div><label class="lbl">Neighborhood</label><input id="rf-hood" value="${f?.neighborhood||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Address</label><input id="rf-addr" value="${f?.address||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Status</label><select id="rf-status"><option>Saved</option><option>Visited</option><option>Skip</option></select></div>
+      <div style="display:flex;align-items:center;gap:6px;padding-top:20px"><input type="checkbox" id="rf-must" ${f?.mustTry?'checked':''}><label class="lbl" style="margin:0">Must Try?</label></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Maps Link</label><input id="rf-link" value="${f?.link||''}"></div>
+    <div><label class="lbl">Notes</label><textarea id="rf-notes">${f?.notes||''}</textarea></div>`;
+}
+function addFood(){
+  openModal('Add Restaurant',foodForm(null),()=>{
+    S.food.push({id:uid(),country:gv('rfc'),city:gv('rf-city'),name:gv('rf-name'),cuisine:gv('rf-cuisine'),neighborhood:gv('rf-hood'),address:gv('rf-addr'),link:gv('rf-link')||'',mustTry:gc('rf-must'),status:gv('rf-status'),estSpend:0,cur:'KRW',notes:gv('rf-notes')});
+    save();closeModal();renderMain();
+  });
+}
+function editFood(id){
+  const f=S.food.find(f=>f.id==id);if(!f)return;
+  openModal('Edit Restaurant',foodForm(f),()=>{
+    S.food=S.food.map(r=>r.id==id?{...r,country:gv('rfc'),city:gv('rf-city'),name:gv('rf-name'),cuisine:gv('rf-cuisine'),neighborhood:gv('rf-hood'),address:gv('rf-addr'),link:gv('rf-link')||'',mustTry:gc('rf-must'),status:gv('rf-status'),notes:gv('rf-notes')}:r);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── TO DO ───────────────────────────────────
+function todoHTML(){
+  const flt=S.todoFilter||'All';
+  const priorities=['High','Medium','Low'];
+  const shown=flt==='All'?S.todos:S.todos.filter(t=>t.city===flt);
+  const todoDone=S.todos.filter(t=>t.done).length;
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">🎯 Things To Do</div>
+    <button class="btn bp bsm" onclick="addTodo()">+ Add</button>
+  </div>
+  <div style="font-size:12px;color:var(--muted);margin-bottom:10px">${todoDone}/${S.todos.length} done · Filter by city:</div>
+  ${cityChips('todoFilter','setTodoFilter',S.todos,t=>t.city)}
+  ${priorities.map(p=>{
+    const items=shown.filter(t=>t.priority===p);
+    if(!items.length)return'';
+    return`
+    <div class="stitle" style="margin-top:8px;color:${p==='High'?'var(--redS)':p==='Medium'?'var(--yellowS)':'var(--muted)'}">${p==='High'?'🔴':'🟡'} ${p} Priority</div>
+    ${items.map(t=>`
+      <div class="ri ${t.done?'done-row':''}" style="margin-bottom:7px;border-color:${t.done?'rgba(52,211,153,.3)':''}">
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+            ${pill(cf(t.country)+' '+t.city,cc(t.country))}
+            ${pill(t.cat,CATCLR[t.cat]||'var(--soft)')}
+            ${t.mustBook?pill('Book!','var(--redS)'):''}
+            ${t.costCad>0?pill(fmtCAD(t.costCad),'var(--greenS)'):''}
+          </div>
+          <div style="font-weight:700;font-size:14px;text-decoration:${t.done?'line-through':''}">${t.activity}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">
+            ${t.duration?'⏱ '+t.duration+'hr':''} ${t.bestTime?'· 🕐 Best: '+t.bestTime:''}
+          </div>
+          ${t.notes?`<div class="notes-box">${t.notes}</div>`:''}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0">
+          <button class="btn bo bsm" onclick="editTodo('${t.id}')">Edit</button>
+          <button class="btn bsm" style="background:${t.done?'rgba(5,150,105,.2)':'rgba(5,150,105,.6)'};color:#fff;border:none" onclick="toggleTodo('${t.id}')">${t.done?'Undo':'Done'}</button>
+          <button class="btn br bsm" onclick="delTodo('${t.id}')">✕</button>
+        </div>
+      </div>`).join('')}`;
+  }).join('')}`;
+}
+function setTodoFilter(f){S.todoFilter=f;save();renderMain();}
+function toggleTodo(id){S.todos=S.todos.map(t=>t.id==id?{...t,done:!t.done}:t);save();renderMain();}
+function delTodo(id){if(window.confirm('Delete?')){S.todos=S.todos.filter(t=>t.id!=id);save();renderMain();}}
+
+function todoForm(t){
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Country</label><select id="tf-country"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+      <div><label class="lbl">City</label><input id="tf-city" value="${t?.city||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Activity</label><input id="tf-act" value="${t?.activity||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><select id="tf-cat"><option>Sightseeing</option><option>Activities</option><option>Nature</option><option>Beach</option><option>Concert</option><option>Food/Market</option><option>Shopping</option><option>Other</option></select></div>
+      <div><label class="lbl">Priority</label><select id="tf-pri"><option>High</option><option>Medium</option><option>Low</option></select></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Duration (hrs)</label><input id="tf-dur" value="${t?.duration||''}"></div>
+      <div><label class="lbl">Best Time</label><input id="tf-time" value="${t?.bestTime||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Cost (Local)</label><input id="tf-costl" type="number" value="${t?.costLocal||0}"></div>
+      <div><label class="lbl">Cost (CAD)</label><input id="tf-cad" type="number" step="0.01" value="${t?.costCad||0}"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px"><input type="checkbox" id="tf-book" ${t?.mustBook?'checked':''}><label class="lbl" style="margin:0">Must Book in Advance?</label></div>
+    <div><label class="lbl">Notes</label><textarea id="tf-notes">${t?.notes||''}</textarea></div>`;
+}
+function addTodo(){
+  openModal('Add Activity',todoForm(null),()=>{
+    S.todos.push({id:uid(),country:gv('tf-country'),city:gv('tf-city'),activity:gv('tf-act'),cat:gv('tf-cat'),priority:gv('tf-pri'),duration:gv('tf-dur'),bestTime:gv('tf-time'),costLocal:Number(gv('tf-costl')),cur:'KRW',costCad:Number(gv('tf-cad')),mustBook:gc('tf-book'),done:false,notes:gv('tf-notes')});
+    save();closeModal();renderMain();
+  });
+}
+function editTodo(id){
+  const t=S.todos.find(t=>t.id==id);if(!t)return;
+  openModal('Edit Activity',todoForm(t),()=>{
+    S.todos=S.todos.map(td=>td.id==id?{...td,country:gv('tf-country'),city:gv('tf-city'),activity:gv('tf-act'),cat:gv('tf-cat'),priority:gv('tf-pri'),duration:gv('tf-dur'),bestTime:gv('tf-time'),costLocal:Number(gv('tf-costl')),costCad:Number(gv('tf-cad')),mustBook:gc('tf-book'),notes:gv('tf-notes')}:td);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── BUDGET ──────────────────────────────────
+function budgetHTML(){
+  const totalP=S.budget.reduce((a,b)=>a+Number(b.planned||0),0);
+  const totalA=S.budget.reduce((a,b)=>a+Number(b.actual||0),0);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">💰 Budget</div>
+    <button class="btn bp bsm" onclick="addBudgetCat()">+ Category</button>
+  </div>
+  <div class="g3" style="margin-bottom:14px">
+    ${[{v:fmtCAD(totalP),l:'Total Planned',c:'var(--soft)'},{v:fmtCAD(totalA),l:'Actual Spent',c:'var(--tealS)'},{v:fmtCAD(totalP-totalA),l:'Remaining',c:totalP-totalA>=0?'var(--greenS)':'var(--redS)'}].map(k=>`<div class="smi"><div class="smi-v" style="color:${k.c}">${k.v}</div><div class="smi-l">${k.l}</div></div>`).join('')}
+  </div>
+  ${totalP>0?`
+  <div class="card" style="margin-bottom:12px">
+    <div style="font-size:13px;font-weight:700;margin-bottom:8px">Overall Usage</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:6px">${fmtCAD(totalA)} / ${fmtCAD(totalP)}</div>
+    ${bar(totalP>0?(totalA/totalP)*100:0,'var(--accent)',10)}
+  </div>`:''}
+  ${S.budget.map(b=>{
+    const pct=b.planned>0?Math.round((b.actual/b.planned)*100):b.actual>0?100:0;
+    return`
+    <div class="card" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:26px;flex-shrink:0">${b.icon}</span>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:7px">
+            <span style="font-weight:800;font-size:14px">${b.cat}</span>
+            <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+              <span style="font-size:12px;color:var(--muted)">${fmtCAD(b.actual)} / ${fmtCAD(b.planned)}</span>
+              ${pill(pct>100?'Over!':pct>80?pct+'% ⚠️':pct+'%',pct>100?'var(--redS)':pct>80?'var(--yellowS)':'var(--greenS)')}
+            </div>
+          </div>
+          ${bar(pct,'var(--tealS)',7)}
+          ${b.notes?`<div style="font-size:10px;color:var(--muted);margin-top:4px">${b.notes}</div>`:''}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0">
+          <button class="btn bp bsm" onclick="logSpend('${b.id}')">+ Spend</button>
+          <button class="btn bo bsm" onclick="editBudget('${b.id}')">Edit</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('')}`;
+}
+
+function logSpend(id){
+  const b=S.budget.find(b=>b.id==id);if(!b)return;
+  openModal(`Log Expense — ${b.icon} ${b.cat}`,`
+    <div style="color:var(--muted);font-size:12px;margin-bottom:12px">Current: ${fmtCAD(b.actual)} of ${fmtCAD(b.planned)} planned</div>
+    <label class="lbl">Amount (CAD)</label>
+    <input id="ls-amt" type="number" step="0.01" placeholder="Amount to add">
+  `,()=>{
+    const v=Number(gv('ls-amt'));if(isNaN(v)||v===0)return;
+    S.budget=S.budget.map(bx=>bx.id==id?{...bx,actual:Math.round((Number(bx.actual)+v)*100)/100}:bx);
+    save();closeModal();renderMain();
+  });
+}
+
+function editBudget(id){
+  const b=S.budget.find(b=>b.id==id);if(!b)return;
+  openModal('Edit Budget',`
+    <div style="margin-bottom:8px"><label class="lbl">Category</label><input id="bef-cat" value="${b.cat}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Planned (CAD)</label><input id="bef-plan" type="number" step="0.01" value="${b.planned}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Actual Spent (CAD)</label><input id="bef-act" type="number" step="0.01" value="${b.actual}"></div>
+    <div><label class="lbl">Notes</label><input id="bef-notes" value="${b.notes||''}"></div>
+  `,()=>{
+    S.budget=S.budget.map(bx=>bx.id==id?{...bx,cat:gv('bef-cat'),planned:Number(gv('bef-plan')),actual:Number(gv('bef-act')),notes:gv('bef-notes')}:bx);
+    save();closeModal();renderMain();
+  });
+}
+
+function addBudgetCat(){
+  openModal('Add Budget Category',`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><input id="nbc-cat"></div>
+      <div><label class="lbl">Icon</label><input id="nbc-icon" value="💵"></div>
+    </div>
+    <div><label class="lbl">Planned (CAD)</label><input id="nbc-plan" type="number" step="0.01" value="0"></div>
+  `,()=>{
+    S.budget.push({id:uid(),cat:gv('nbc-cat'),icon:gv('nbc-icon'),planned:Number(gv('nbc-plan')),actual:0,notes:''});
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── EXPENSES ────────────────────────────────
+function expensesHTML(){
+  const total=S.expenses.reduce((a,e)=>a+Number(e.amtCad||0),0);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">💸 Expenses</div>
+    <button class="btn bp bsm" onclick="addExpense()">+ Add</button>
+  </div>
+  ${S.expenses.length?`<div class="card" style="margin-bottom:12px;text-align:center"><div style="font-size:22px;font-weight:800;color:var(--soft)">${fmtCAD(total)}</div><div style="font-size:11px;color:var(--muted)">Total logged (CAD)</div></div>`:''}
+  ${S.expenses.length===0?`<div class="empty">No expenses logged yet.<br>Add your first expense during the trip!</div>`:
+  S.expenses.map(e=>`
+    <div class="ri" style="margin-bottom:7px">
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:700;font-size:13px">${e.description||'Expense'}</div>
+        <div style="font-size:11px;color:var(--muted)">${e.date} · ${e.city||''} · ${e.cat||''}</div>
+        ${e.vendor?`<div style="font-size:10px;color:var(--muted)">${e.vendor}</div>`:''}
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-weight:800;color:var(--soft)">${fmtCAD(e.amtCad)}</div>
+        <div style="font-size:10px;color:var(--muted)">${e.amtLocal} ${e.cur}</div>
+        <button class="btn br bsm" style="margin-top:4px" onclick="delExpense('${e.id}')">✕</button>
+      </div>
+    </div>`).join('')}`;
+}
+
+function delExpense(id){S.expenses=S.expenses.filter(e=>e.id!=id);save();renderMain();}
+function addExpense(){
+  const cats=S.budget.map(b=>b.cat);
+  openModal('Log Expense',`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Date</label><input id="ef-date" type="date"></div>
+      <div><label class="lbl">Country</label><select id="ef-country"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">City</label><input id="ef-city"></div>
+      <div><label class="lbl">Category</label><select id="ef-cat">${cats.map(c=>`<option>${c}</option>`).join('')}</select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Description</label><input id="ef-desc"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Vendor</label><input id="ef-vendor"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Amount (Local)</label><input id="ef-amtl" type="number" step="0.01"></div>
+      <div><label class="lbl">Currency</label><select id="ef-cur"><option>KRW</option><option>JPY</option><option>CNY</option><option>USD</option><option>CAD</option><option>THB</option></select></div>
+    </div>
+    <div><label class="lbl">Amount (CAD)</label><input id="ef-cad" type="number" step="0.01"></div>
+  `,()=>{
+    S.expenses.push({id:uid(),date:gv('ef-date'),country:gv('ef-country'),city:gv('ef-city'),cat:gv('ef-cat'),description:gv('ef-desc'),vendor:gv('ef-vendor'),amtLocal:Number(gv('ef-amtl')),cur:gv('ef-cur'),amtCad:Number(gv('ef-cad'))});
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── SHOPPING ────────────────────────────────
+function shoppingHTML(){
+  const flt=S.shopFilter||'All';
+  const bought=S.shopping.filter(s=>s.bought).length;
+  const shown=flt==='All'?S.shopping:S.shopping.filter(s=>s.city===flt);
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">🛍️ Shopping Wishlist</div>
+    <button class="btn bp bsm" onclick="addShop()">+ Add</button>
+  </div>
+  ${S.shopping.length?`<div style="font-size:12px;color:var(--muted);margin-bottom:8px">${bought}/${S.shopping.length} bought · Filter by city:</div>`:''}
+  ${S.shopping.length>0?cityChips('shopFilter','setShopFilter',S.shopping,s=>s.city):''}
+  ${shown.length===0?`<div class="empty">No items${flt!=='All'?' for '+flt:''} yet.<br>Add things you want to buy!</div>`:''}
+  ${shown.map(s=>`
+    <div class="ri ${s.bought?'done-row':''}" style="margin-bottom:7px">
+      <div style="width:22px;height:22px;border-radius:6px;border:2px solid ${s.bought?'var(--green)':'var(--border2)'};background:${s.bought?'var(--green)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer" onclick="toggleShopBought('${s.id}')">
+        ${s.bought?'<span style="color:#fff;font-size:11px">✓</span>':''}
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:700;font-size:13px;text-decoration:${s.bought?'line-through':''}">${s.item}</div>
+        <div style="font-size:11px;color:var(--muted)">${s.cat||''} ${s.city?'· '+s.city:''} ${s.where?'@ '+s.where:''}</div>
+        ${s.totalCad>0?`<div style="font-size:11px;color:var(--greenS)">${fmtCAD(s.totalCad)}</div>`:''}
+        ${s.notes?`<div class="notes-box">${s.notes}</div>`:''}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0">
+        <button class="btn bo bsm" onclick="editShop('${s.id}')">Edit</button>
+        <button class="btn br bsm" onclick="delShop('${s.id}')">✕</button>
+      </div>
+    </div>`).join('')}`;
+}
+function setShopFilter(f){S.shopFilter=f;save();renderMain();}
+function toggleShopBought(id){S.shopping=S.shopping.map(s=>s.id==id?{...s,bought:!s.bought}:s);save();renderMain();}
+function delShop(id){S.shopping=S.shopping.filter(s=>s.id!=id);save();renderMain();}
+function addShop(){
+  openModal('Add Wishlist Item',`
+    <div style="margin-bottom:8px"><label class="lbl">Item</label><input id="sf2-item"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><input id="sf2-cat"></div>
+      <div><label class="lbl">City</label><input id="sf2-city"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Where</label><input id="sf2-where"></div>
+      <div><label class="lbl">Est. Cost (CAD)</label><input id="sf2-cost" type="number" step="0.01"></div>
+    </div>
+    <div><label class="lbl">Notes</label><textarea id="sf2-notes"></textarea></div>
+  `,()=>{
+    S.shopping.push({id:uid(),item:gv('sf2-item'),cat:gv('sf2-cat'),city:gv('sf2-city'),where:gv('sf2-where'),qty:1,priceLocal:0,cur:'CAD',total:0,totalCad:Number(gv('sf2-cost')),bought:false,notes:gv('sf2-notes')});
+    save();closeModal();renderMain();
+  });
+}
+
+function editShop(id){
+  const s=S.shopping.find(s=>s.id==id);if(!s)return;
+  openModal('Edit Item',`
+    <div style="margin-bottom:8px"><label class="lbl">Item</label><input id="sf2-item" value="${s.item||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><input id="sf2-cat" value="${s.cat||''}"></div>
+      <div><label class="lbl">City</label><input id="sf2-city" value="${s.city||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Where to buy</label><input id="sf2-where" value="${s.where||''}"></div>
+      <div><label class="lbl">Est. Cost (CAD)</label><input id="sf2-cost" type="number" step="0.01" value="${s.totalCad||0}"></div>
+    </div>
+    <div><label class="lbl">Notes</label><textarea id="sf2-notes">${s.notes||''}</textarea></div>
+  `,()=>{
+    S.shopping=S.shopping.map(sx=>sx.id==id?{...sx,item:gv('sf2-item'),cat:gv('sf2-cat'),city:gv('sf2-city'),where:gv('sf2-where'),totalCad:Number(gv('sf2-cost')),notes:gv('sf2-notes')}:sx);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── BOOKINGS ────────────────────────────────
+function bookingsHTML(){
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">📋 Bookings & Reservations</div>
+    <button class="btn bp bsm" onclick="addBooking()">+ Add</button>
+  </div>
+  ${S.bookings.length===0?`<div class="empty">No bookings tracked yet.<br>Add hotels, tours, tickets, trains, etc.</div>`:
+  S.bookings.map(b=>`
+    <div class="ri" style="margin-bottom:7px;border-color:${b.booked?'rgba(52,211,153,.3)':''}">
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px">${pill(b.type||'Other','var(--soft)')}</div>
+        <div style="font-weight:700;font-size:13px">${b.item}</div>
+        <div style="font-size:11px;color:var(--muted)">${b.country||''} ${b.city?'· '+b.city:''} · ${b.date||''} ${b.time||''}</div>
+        ${b.confirmNum?`<div style="font-size:10px;color:var(--tealS)">Conf: ${b.confirmNum}</div>`:''}
+        ${b.cancelBy?`<div style="font-size:10px;color:var(--redS)">⚠️ Cancel by ${b.cancelBy}</div>`:''}
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        ${b.costCad>0?`<div style="font-weight:800;color:var(--soft)">${fmtCAD(b.costCad)}</div>`:''}
+        ${pill(b.booked?'Booked':'Pending',b.booked?'var(--greenS)':'var(--yellowS)')}
+        <div style="display:flex;gap:4px;margin-top:6px;flex-direction:column">
+          <button class="btn bsm" style="background:${b.booked?'rgba(5,150,105,.2)':'rgba(5,150,105,.6)'};color:#fff;border:none" onclick="toggleBooking('${b.id}')">${b.booked?'Unbook':'Confirm'}</button>
+          <button class="btn bo bsm" onclick="editBooking('${b.id}')">Edit</button>
+          <button class="btn br bsm" onclick="delBooking('${b.id}')">✕</button>
+        </div>
+      </div>
+    </div>`).join('')}`;
+}
+
+function toggleBooking(id){S.bookings=S.bookings.map(b=>b.id==id?{...b,booked:!b.booked}:b);save();renderMain();}
+function delBooking(id){S.bookings=S.bookings.filter(b=>b.id!=id);save();renderMain();}
+function editBooking(id){
+  const b=S.bookings.find(b=>b.id==id);if(!b)return;
+  const types=['Flight','Hotel','Train','Tour','Ticket','Restaurant','Other'];
+  openModal('Edit Booking',`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Type</label><select id="bkf-type">${types.map(t=>`<option ${b.type===t?'selected':''}>${t}</option>`).join('')}</select></div>
+      <div><label class="lbl">Country</label><select id="bkf-country"><option ${b.country==='Korea'?'selected':''}>Korea</option><option ${b.country==='China'?'selected':''}>China</option><option ${b.country==='Japan'?'selected':''}>Japan</option><option ${b.country==='Thailand'?'selected':''}>Thailand</option></select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Item/Name</label><input id="bkf-item" value="${b.item||''}"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Date</label><input id="bkf-date" type="date" value="${b.date||''}"></div>
+      <div><label class="lbl">Time</label><input id="bkf-time" value="${b.time||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Confirmation #</label><input id="bkf-conf" value="${b.confirmNum||''}"></div>
+      <div><label class="lbl">Cancel By</label><input id="bkf-cancel" type="date" value="${b.cancelBy||''}"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Cost (Local)</label><input id="bkf-costl" type="number" value="${b.costLocal||0}"></div>
+      <div><label class="lbl">Cost (CAD)</label><input id="bkf-cad" type="number" step="0.01" value="${b.costCad||0}"></div>
+    </div>
+    <div><label class="lbl">Notes</label><textarea id="bkf-notes">${b.notes||''}</textarea></div>
+  `,()=>{
+    S.bookings=S.bookings.map(bk=>bk.id==id?{...bk,type:gv('bkf-type'),country:gv('bkf-country'),item:gv('bkf-item'),date:gv('bkf-date'),time:gv('bkf-time'),confirmNum:gv('bkf-conf'),cancelBy:gv('bkf-cancel'),costLocal:Number(gv('bkf-costl')),costCad:Number(gv('bkf-cad')),notes:gv('bkf-notes')}:bk);
+    save();closeModal();renderMain();
+  });
+}
+function addBooking(){
+  openModal('Add Booking',`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Type</label><select id="bkf-type"><option>Flight</option><option>Hotel</option><option>Train</option><option>Tour</option><option>Ticket</option><option>Restaurant</option><option>Other</option></select></div>
+      <div><label class="lbl">Country</label><select id="bkf-country"><option>Korea</option><option>China</option><option>Japan</option><option>Thailand</option></select></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Item/Name</label><input id="bkf-item"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Date</label><input id="bkf-date" type="date"></div>
+      <div><label class="lbl">Time</label><input id="bkf-time"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Confirmation #</label><input id="bkf-conf"></div>
+      <div><label class="lbl">Cancel By</label><input id="bkf-cancel" type="date"></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Cost (Local)</label><input id="bkf-costl" type="number"></div>
+      <div><label class="lbl">Cost (CAD)</label><input id="bkf-cad" type="number" step="0.01"></div>
+    </div>
+    <div><label class="lbl">Notes</label><textarea id="bkf-notes"></textarea></div>
+  `,()=>{
+    S.bookings.push({id:uid(),type:gv('bkf-type'),country:gv('bkf-country'),city:'',item:gv('bkf-item'),date:gv('bkf-date'),time:gv('bkf-time'),confirmNum:gv('bkf-conf'),cancelBy:gv('bkf-cancel'),costLocal:Number(gv('bkf-costl')),cur:'CAD',costCad:Number(gv('bkf-cad')),booked:false,notes:gv('bkf-notes')});
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── PACKING ─────────────────────────────────
+function packingHTML(){
+  const packed=S.packing.filter(p=>p.packed).length;
+  const pct=S.packing.length?Math.round((packed/S.packing.length)*100):0;
+  const cats=[...new Set(S.packing.map(p=>p.cat))];
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">🧳 Packing List</div>
+    <button class="btn bp bsm" onclick="addPackItem()">+ Add</button>
+  </div>
+  ${S.packing.length?`
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+      <span style="font-weight:700">Progress</span>
+      <span style="font-weight:800;color:var(--greenS)">${packed}/${S.packing.length} (${pct}%)</span>
+    </div>
+    ${bar(pct,'var(--green)',10)}
+  </div>`:''}
+  ${S.packing.length===0?`<div class="empty">Your packing list is empty.<br>Add items you need to pack!</div>`:''}
+  ${cats.map(cat=>{
+    const items=S.packing.filter(p=>p.cat===cat);
+    return`
+    <div style="margin-bottom:14px">
+      <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px;display:flex;justify-content:space-between">
+        <span>${cat}</span>
+        <span style="color:var(--greenS)">${items.filter(p=>p.packed).length}/${items.length}</span>
+      </div>
+      ${items.map(p=>`
+        <div class="ri ${p.packed?'done-row':''}" style="margin-bottom:6px;border-color:${p.packed?'rgba(52,211,153,.3)':''};cursor:pointer" onclick="togglePacked('${p.id}')">
+          <div style="width:20px;height:20px;border-radius:6px;border:2px solid ${p.packed?'var(--green)':'var(--faint)'};background:${p.packed?'var(--green)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            ${p.packed?'<span style="color:#fff;font-size:11px">✓</span>':''}
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:600;font-size:13px;text-decoration:${p.packed?'line-through':''}">${p.item}</div>
+            ${p.notes?`<div style="font-size:10px;color:var(--muted)">${p.notes}</div>`:''}
+          </div>
+          ${p.qty>1?`<span style="font-size:11px;color:var(--muted)">×${p.qty}</span>`:''}
+          <button class="btn br bsm" onclick="event.stopPropagation();delPack('${p.id}')">✕</button>
+        </div>`).join('')}
+    </div>`;
+  }).join('')}`;
+}
+
+function togglePacked(id){S.packing=S.packing.map(p=>p.id==id?{...p,packed:!p.packed}:p);save();renderMain();renderHeader();}
+function delPack(id){S.packing=S.packing.filter(p=>p.id!=id);save();renderMain();}
+function addPackItem(){
+  openModal('Add Packing Item',`
+    <div style="margin-bottom:8px"><label class="lbl">Item</label><input id="pkf-item"></div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Category</label><input id="pkf-cat" placeholder="e.g. Documents, Electronics..."></div>
+      <div><label class="lbl">Quantity</label><input id="pkf-qty" type="number" value="1"></div>
+    </div>
+    <div><label class="lbl">Notes</label><input id="pkf-notes"></div>
+  `,()=>{
+    S.packing.push({id:uid(),item:gv('pkf-item'),cat:gv('pkf-cat')||'Other',qty:Number(gv('pkf-qty'))||1,packed:false,notes:gv('pkf-notes')});
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── CONTACTS ────────────────────────────────
+function contactsHTML(){
+  return`
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:800;font-size:15px">📞 Important Contacts</div>
+    <button class="btn bp bsm" onclick="addContact()">+ Add</button>
+  </div>
+  ${S.contacts.length===0?`<div class="empty">No contacts yet.<br>Add emergency contacts, hotels, airlines, consulates, etc.</div>`:
+  S.contacts.map(c=>`
+    <div class="ri" style="margin-bottom:7px">
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px">${pill(c.type||'Contact','var(--soft)')}</div>
+        <div style="font-weight:700;font-size:14px">${c.name}</div>
+        ${c.phone?`<div style="font-size:12px;color:var(--tealS)">📞 ${c.phone}</div>`:''}
+        ${c.email?`<div style="font-size:12px;color:var(--muted)">✉️ ${c.email}</div>`:''}
+        ${c.address?`<div style="font-size:11px;color:var(--muted)">📍 ${c.address}</div>`:''}
+        ${c.hours?`<div style="font-size:11px;color:var(--muted)">🕐 ${c.hours}</div>`:''}
+        ${c.notes?`<div class="notes-box">${c.notes}</div>`:''}
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0">
+        <button class="btn bo bsm" onclick="editContact('${c.id}')">Edit</button>
+        <button class="btn br bsm" onclick="delContact('${c.id}')">✕</button>
+      </div>
+    </div>`).join('')}`;
+}
+
+function delContact(id){S.contacts=S.contacts.filter(c=>c.id!=id);save();renderMain();}
+function contactForm(c){
+  return`
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Name</label><input id="cf2-name" value="${c?.name||''}"></div>
+      <div><label class="lbl">Type</label><select id="cf2-type"><option>Emergency</option><option>Hotel</option><option>Airline</option><option>Consulate</option><option>Doctor</option><option>Insurance</option><option>Other</option></select></div>
+    </div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Phone</label><input id="cf2-phone" value="${c?.phone||''}"></div>
+      <div><label class="lbl">Email</label><input id="cf2-email" value="${c?.email||''}"></div>
+    </div>
+    <div style="margin-bottom:8px"><label class="lbl">Address</label><input id="cf2-addr" value="${c?.address||''}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Hours</label><input id="cf2-hours" value="${c?.hours||''}"></div>
+    <div><label class="lbl">Notes</label><textarea id="cf2-notes">${c?.notes||''}</textarea></div>`;
+}
+function addContact(){
+  openModal('Add Contact',contactForm(null),()=>{
+    S.contacts.push({id:uid(),name:gv('cf2-name'),type:gv('cf2-type'),phone:gv('cf2-phone'),email:gv('cf2-email'),address:gv('cf2-addr'),hours:gv('cf2-hours'),notes:gv('cf2-notes')});
+    save();closeModal();renderMain();
+  });
+}
+function editContact(id){
+  const c=S.contacts.find(c=>c.id==id);if(!c)return;
+  openModal('Edit Contact',contactForm(c),()=>{
+    S.contacts=S.contacts.map(cx=>cx.id==id?{...cx,name:gv('cf2-name'),type:gv('cf2-type'),phone:gv('cf2-phone'),email:gv('cf2-email'),address:gv('cf2-addr'),hours:gv('cf2-hours'),notes:gv('cf2-notes')}:cx);
+    save();closeModal();renderMain();
+  });
+}
+
+// ─── CURRENCY ────────────────────────────────
+function currencyHTML(){
+  return`
+  <div style="font-weight:800;font-size:15px;margin-bottom:12px">💱 Currency Converter</div>
+  <div class="card" style="margin-bottom:16px">
+    <div class="stitle">Quick Convert</div>
+    <div class="g2" style="gap:8px;margin-bottom:8px">
+      <div><label class="lbl">Amount</label><input id="cv-amt" type="number" placeholder="0" oninput="cvConvert()"></div>
+      <div><label class="lbl">From Currency</label>
+        <select id="cv-from" onchange="cvConvert()">
+          ${S.fx.map(f=>`<option value="${f.code}">${f.code} — ${f.name}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+    <div id="cv-results" style="display:flex;flex-direction:column;gap:6px;margin-top:8px"></div>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div class="stitle" style="margin:0">FX Rates (→ CAD)</div>
+      <button class="btn bp bsm" onclick="addFxRate()">+ Add Rate</button>
+    </div>
+    ${S.fx.map(f=>`
+      <div class="ri" style="margin-bottom:7px">
+        <div style="flex:1">
+          <div style="font-weight:700;font-size:14px">${f.code}</div>
+          <div style="font-size:12px;color:var(--muted)">${f.name}</div>
+        </div>
+        <div style="text-align:right;margin-right:10px">
+          <div style="font-weight:800;color:var(--soft)">1 ${f.code} = ${f.rate} CAD</div>
+          <div style="font-size:10px;color:var(--muted)">1 CAD = ${f.rate>0?(1/f.rate).toFixed(f.code==='KRW'?0:2):0} ${f.code}</div>
+        </div>
+        <button class="btn bo bsm" onclick="editFxRate('${f.id}')">Edit</button>
+      </div>`).join('')}
+  </div>`;
+}
+
+function cvConvert(){
+  const amt=Number(document.getElementById('cv-amt')?.value||0);
+  const fromCode=document.getElementById('cv-from')?.value||'CAD';
+  const fromRate=(S.fx.find(f=>f.code===fromCode)||{rate:1}).rate;
+  const amtCad=amt*fromRate;
+  const res=document.getElementById('cv-results');
+  if(!res)return;
+  res.innerHTML=S.fx.filter(f=>f.code!==fromCode).map(f=>`
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:9px;background:var(--card2);border:1px solid var(--border2)">
+      <span style="font-weight:600;font-size:13px">${f.code} <span style="color:var(--muted);font-size:11px">${f.name}</span></span>
+      <span style="font-weight:800;font-size:14px;color:var(--soft)">${f.rate>0?(amtCad/f.rate).toLocaleString(undefined,{maximumFractionDigits:f.code==='KRW'||f.code==='JPY'?0:2}):0} ${f.code}</span>
+    </div>`).join('');
+}
+
+function editFxRate(id){
+  const f=S.fx.find(f=>f.id==id);if(!f)return;
+  openModal('Edit FX Rate',`
+    <div style="margin-bottom:8px"><label class="lbl">Currency Code</label><input id="fxf-code" value="${f.code}"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Name</label><input id="fxf-name" value="${f.name}"></div>
+    <div><label class="lbl">CAD per 1 unit</label><input id="fxf-rate" type="number" step="0.0001" value="${f.rate}"></div>
+  `,()=>{
+    S.fx=S.fx.map(fx=>fx.id==id?{...fx,code:gv('fxf-code'),name:gv('fxf-name'),rate:Number(gv('fxf-rate'))}:fx);
+    save();closeModal();renderMain();
+  });
+}
+
+function addFxRate(){
+  openModal('Add FX Rate',`
+    <div style="margin-bottom:8px"><label class="lbl">Currency Code (e.g. THB)</label><input id="fxf-code"></div>
+    <div style="margin-bottom:8px"><label class="lbl">Name</label><input id="fxf-name"></div>
+    <div><label class="lbl">CAD per 1 unit</label><input id="fxf-rate" type="number" step="0.0001"></div>
+  `,()=>{
+    S.fx.push({id:uid(),code:gv('fxf-code'),name:gv('fxf-name'),rate:Number(gv('fxf-rate'))});
+    save();closeModal();renderMain();
+  });
+}
+
+// ════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════
+// Auth handled by Firebase Auth block below
+</script>
+
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js");</script>
+
+<script>
+// Firebase Auth + Sync — fully isolated
+(function() {
+  var ALLOWED = ["yozora230@gmail.com", "jsraqueno2@gmail.com", "jlraqueno9@gmail.com", "jsraqueno2@hotmail.com"];
+  var AUTH_KEY = '_yz_email';
+  var FB_CONF = {
+    apiKey:"AIzaSyAWMP8Dq0LhthbajGV2n2Hsx0TWIB1sQAg",
+    authDomain:"yozoraasiatravelplanner.firebaseapp.com",
+    projectId:"yozoraasiatravelplanner",
+    storageBucket:"yozoraasiatravelplanner.firebasestorage.app",
+    messagingSenderId:"902226769030",
+    appId:"1:902226769030:web:8c14406657376c01458d07"
+  };
+
+  var db = null;
+  var appShown = false;
+
+  function isAllowed(email) {
+    return ALLOWED.map(function(e){return e.toLowerCase();})
+                  .indexOf((email||'').toLowerCase()) !== -1;
+  }
+
+  function showApp() {
+    if (appShown) return;
+    appShown = true;
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('hdr').style.display = '';
+    document.getElementById('tabnav').style.display = '';
+    document.getElementById('main').style.display = '';
+    try { renderAll(); } catch(e) { console.error('renderAll failed:', e); }
+  }
+
+  function showAuth(msg) {
+    appShown = false;
+    document.getElementById('auth-screen').style.display = 'flex';
+    document.getElementById('hdr').style.display = 'none';
+    document.getElementById('tabnav').style.display = 'none';
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('auth-loading').textContent = '';
+    document.getElementById('auth-err').textContent = msg || '';
+  }
+
+  function applyRemoteState(data) {
+    if (!data || !data.state) return;
+    var remoteTs = data.updatedAt || 0;
+    var localTs  = parseInt(localStorage.getItem('_fbts') || '0');
+    if (remoteTs <= localTs) return;
+    try {
+      var parsed = JSON.parse(data.state);
+      if (typeof S !== 'undefined') {
+        var currentTab = S.tab; // keep local tab, don't let remote override it
+        S = parsed;
+        S.tab = currentTab;
+        localStorage.setItem('asiatrip26v3', data.state);
+        localStorage.setItem('_fbts', remoteTs.toString());
+        if (appShown && typeof renderAll === 'function') renderAll();
+      }
+    } catch(e) {}
+  }
+
+  window._fbSave = function() {
+    if (!db) return;
+    var ts = Date.now();
+    localStorage.setItem('_fbts', ts.toString());
+    try {
+      // Strip tab from synced state so each device keeps its own active tab
+      var stateToSync = JSON.parse(localStorage.getItem('asiatrip26v3') || '{}');
+      delete stateToSync.tab;
+      db.collection('trips').doc('asia2026').set({
+        state: JSON.stringify(stateToSync),
+        updatedAt: ts
+      });
+    } catch(e) {}
+  };
+
+  function initFirestore() {
+    try {
+      db = firebase.firestore();
+      db.enablePersistence({synchronizeTabs:true}).catch(function(){});
+      db.collection('trips').doc('asia2026').get().then(function(doc) {
+        if (doc.exists) { applyRemoteState(doc.data()); }
+        else { window._fbSave(); }
+      }).catch(function(){});
+      db.collection('trips').doc('asia2026').onSnapshot(function(doc) {
+        if (!doc.exists || doc.metadata.hasPendingWrites) return;
+        applyRemoteState(doc.data());
+      }, function(){});
+    } catch(e) {}
+  }
+
+  function initAuth() {
+    try {
+      if (!firebase.apps.length) firebase.initializeApp(FB_CONF);
+
+      // ── OFFLINE-FIRST: show app immediately if cached email is allowed ──
+      var cachedEmail = localStorage.getItem(AUTH_KEY);
+      if (cachedEmail && isAllowed(cachedEmail)) {
+        showApp();
+        // Still init firestore for sync when connection returns
+        try { initFirestore(); } catch(e) {}
+      }
+
+      // Sign-in button
+      document.getElementById('google-signin-btn').addEventListener('click', function() {
+        document.getElementById('auth-loading').textContent = 'Signing in...';
+        document.getElementById('auth-err').textContent = '';
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).catch(function() {
+          document.getElementById('auth-loading').textContent = '';
+          document.getElementById('auth-err').textContent = 'Sign-in failed. Try again.';
+        });
+      });
+
+      // Auth state listener — runs when online
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var email = (user.email || '').toLowerCase();
+          if (isAllowed(email)) {
+            localStorage.setItem(AUTH_KEY, email); // cache for offline
+            document.getElementById('auth-loading').textContent = '';
+            if (!appShown) { initFirestore(); showApp(); }
+          } else {
+            localStorage.removeItem(AUTH_KEY);
+            firebase.auth().signOut();
+            showAuth('Access denied. This account is not authorised.');
+          }
+        } else {
+          // No Firebase session — but if we have a valid cached email, stay shown
+          var cached = localStorage.getItem(AUTH_KEY);
+          if (!cached || !isAllowed(cached)) {
+            showAuth();
+          }
+          // else: offline + cached email = stay in app
+        }
+      });
+
+    } catch(e) { console.warn('Auth init error:', e); showAuth(); }
+  }
+
+  function waitAndInit(n) {
+    if (typeof firebase !== 'undefined' &&
+        typeof firebase.auth === 'function' &&
+        typeof firebase.firestore === 'function') {
+      initAuth();
+    } else if (n > 0) {
+      setTimeout(function(){waitAndInit(n-1);}, 300);
+    }
+  }
+  setTimeout(function(){waitAndInit(20);}, 300);
+})();
+</script>
+<script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+</body>
+</html>
