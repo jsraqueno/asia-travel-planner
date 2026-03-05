@@ -1696,7 +1696,7 @@ function addFxRate(){
     if (!data || !data.state) return;
     var remoteTs = data.updatedAt || 0;
     var localTs  = parseInt(localStorage.getItem('_fbts') || '0');
-    if (remoteTs <= localTs) return;
+    if (remoteTs < localTs) return; // only skip if remote is strictly older
     try {
       var parsed = JSON.parse(data.state);
       if (typeof S !== 'undefined') {
@@ -1728,7 +1728,7 @@ function addFxRate(){
   function initFirestore() {
     try {
       db = firebase.firestore();
-      db.enablePersistence({synchronizeTabs:true}).catch(function(){});
+      db.enablePersistence().catch(function(){});
       db.collection('trips').doc('asia2026').get().then(function(doc) {
         if (doc.exists) { applyRemoteState(doc.data()); }
         else { window._fbSave(); }
