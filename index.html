@@ -1750,9 +1750,9 @@ function addFxRate(){
       // ── OFFLINE-FIRST: show app immediately if cached email is allowed ──
       var cachedEmail = localStorage.getItem(AUTH_KEY);
       if (cachedEmail && isAllowed(cachedEmail)) {
-        showApp();
-        // Still init firestore for sync when connection returns
-        try { initFirestore(); } catch(e) {}
+        showApp(); // show immediately for offline-first
+        // DO NOT init Firestore here - no auth token yet
+        // onAuthStateChanged will fire shortly and init Firestore with valid token
       }
 
       // Sign-in button
@@ -1773,7 +1773,8 @@ function addFxRate(){
           if (isAllowed(email)) {
             localStorage.setItem(AUTH_KEY, email); // cache for offline
             document.getElementById('auth-loading').textContent = '';
-            if (!appShown) { initFirestore(); showApp(); }
+            initFirestore(); // always init/re-init Firestore once we have a valid auth token
+            if (!appShown) { showApp(); }
           } else {
             localStorage.removeItem(AUTH_KEY);
             firebase.auth().signOut();
