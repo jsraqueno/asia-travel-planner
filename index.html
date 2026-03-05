@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="mobile-web-app-capable" content="yes">
 <title>🌏 Asia Trip 2026 — Jacob</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -20,7 +19,7 @@
 }
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
 /* HEADER */
-#hdr{background:linear-gradient(135deg,#08081a 0%,#130826 50%,#08081a 100%);border-bottom:1px solid var(--border2);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+#hdr{background:linear-gradient(135deg,#08081a 0%,#130826 50%,#08081a 100%);border-bottom:1px solid var(--border2);padding:12px 16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(16px)}
 .hdr-top{display:flex;align-items:center;justify-content:space-between}
 .hdr-title{font-size:17px;font-weight:900;background:linear-gradient(135deg,#a78bfa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hdr-sub{font-size:10px;color:var(--muted);margin-top:1px}
@@ -106,18 +105,13 @@ select option{background:#0e0e22}
 .auth-icon{font-size:48px;margin-bottom:14px}
 .auth-title{font-size:22px;font-weight:900;margin-bottom:6px;color:#e2e2f0}
 .auth-sub{font-size:13px;color:#6b7280;margin-bottom:28px;line-height:1.5}
-.auth-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#fff;color:#1f2937;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:12px}
-.auth-google-btn:active{background:#f3f4f6}
+.auth-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#fff;color:#1f2937;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:12px;-webkit-appearance:none}
 .auth-err{color:#f87171;font-size:13px;margin-top:10px;min-height:18px}
 .auth-loading{color:#a78bfa;font-size:13px;margin-top:10px}
 
-
-.sg-arrow{display:none}
-@media(hover:hover){.sg-arrow{display:flex !important}}
-
 </style>
 </head>
-<body style="background:#070712;color:#e2e2f0">
+<body>
 
 <div id="auth-screen">
   <div class="auth-card">
@@ -132,6 +126,7 @@ select option{background:#0e0e22}
     <div class="auth-loading" id="auth-loading"></div>
   </div>
 </div>
+
 <div id="hdr" style="display:none">
   <div class="hdr-top">
     <div>
@@ -396,7 +391,7 @@ let S=(()=>{
 })();
 
 function save(){try{localStorage.setItem('asiatrip26v3',JSON.stringify(S));}catch(e){}try{if(window._fbSave)window._fbSave();}catch(e){}}
-function resetAll(){if(window.confirm('Reset ALL data to defaults?')){localStorage.removeItem('asiatrip26v3');S=JSON.parse(JSON.stringify(DEFAULTS));renderAll();}}
+function resetAll(){if(confirm('Reset ALL data to defaults? This cannot be undone.')){localStorage.removeItem('asiatrip26v3');S=JSON.parse(JSON.stringify(DEFAULTS));renderAll();}}
 function uid(){return Date.now()+Math.random().toString(36).slice(2);}
 
 // ════════════════════════════════════════════════
@@ -663,9 +658,9 @@ function schedHTML(){
   </div>
   <div style="margin-bottom:14px">
     <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">City Group</div>
-    <div style="position:relative;margin-bottom:4px"><button onclick="var e=document.getElementById('sg-inner');e.scrollBy({left:-200,behavior:'smooth'})" style="display:none;position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.85);color:#fff;border:none;cursor:pointer;font-size:18px;z-index:5;align-items:center;justify-content:center;padding:0" class="sg-arrow">&#8249;</button><div id="sg-inner" style="overflow-x:auto;display:flex;gap:6px;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+    <div style="overflow-x:auto;display:flex;gap:6px;padding-bottom:4px;scrollbar-width:none">
       ${SCHED_GROUPS.map(g=>{const cnt=S.sched.filter(s=>s.group===g.name).length;return`<button onclick="setSchedGroup('${g.name.replace(/'/g,"\\'")}') " style="flex-shrink:0;padding:8px 14px;border-radius:10px;border:1px solid ${S.schedGroup===g.name?'var(--accent)':'var(--border2)'};background:${S.schedGroup===g.name?'rgba(124,58,237,.2)':'var(--card2)'};color:${S.schedGroup===g.name?'var(--soft)':'var(--muted)'};cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap">${cf(g.country)} ${g.name}${cnt?` <span style="background:var(--accent);color:#fff;border-radius:5px;padding:1px 5px;font-size:9px">${cnt}</span>`:''}</button>`;}).join('')}
-    </div><button onclick="var e=document.getElementById('sg-inner');e.scrollBy({left:200,behavior:'smooth'})" style="display:none;position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.85);color:#fff;border:none;cursor:pointer;font-size:18px;z-index:5;align-items:center;justify-content:center;padding:0" class="sg-arrow">&#8250;</button></div>
+    </div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
     <div style="font-weight:800;font-size:14px;color:${col}">${cf(curGroup.country)} ${curGroup.name}</div>
@@ -715,9 +710,9 @@ function schedHTML(){
   }).join('')}`;
 }
 
-function setSchedGroup(name){S.schedGroup=name;save();renderMain();setTimeout(function(){var el=document.getElementById('sg-inner');if(el){var i=SCHED_GROUPS.findIndex(function(g){return g.name===name;});var btns=el.querySelectorAll('button');if(btns[i])btns[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}},60);}
+function setSchedGroup(name){S.schedGroup=name;save();renderMain();}
 function toggleSchedDone(id){S.sched=S.sched.map(s=>s.id===id?{...s,done:!s.done}:s);save();renderMain();}
-function delSchedItem(id){if(window.confirm('Delete?')){S.sched=S.sched.filter(s=>s.id!==id);save();renderMain();}}
+function delSchedItem(id){if(confirm('Delete this entry?')){S.sched=S.sched.filter(s=>s.id!==id);save();renderMain();}}
 
 // ─── SMART ADD ────────────────────────────────
 let _sa={day:0,date:'',dow:'',group:'',city:'',country:'',tab:'activities',sel:null,startTime:'',endTime:''};
@@ -809,7 +804,10 @@ function doSmartSave(){
   save();closeModal();renderMain();
 }
 
-function addSchedGroup(){var n=window.prompt('Group name:');if(n){S.schedGroup=n;save();renderMain();}}
+function addSchedGroup(){
+  const name=prompt('New schedule group name:');
+  if(name){S.schedGroup=name;save();renderMain();}
+}
 
 function schedForm(item){
   const cats=['Transit','Lodging','Activities','Food','Shopping','Sightseeing','Concert','Nature','Other'];
@@ -888,7 +886,7 @@ function flightsHTML(){
 
 function toggleFlightSel(id){S.flights=S.flights.map(f=>f.id==id?{...f,selected:!f.selected}:f);save();renderHeader();renderMain();}
 function toggleFlightBooked(id){S.flights=S.flights.map(f=>f.id==id?{...f,booked:!f.booked}:f);save();renderMain();}
-function delFlight(id){if(window.confirm('Delete?')){S.flights=S.flights.filter(f=>f.id!=id);save();renderMain();}}
+function delFlight(id){if(confirm('Delete this flight?')){S.flights=S.flights.filter(f=>f.id!=id);save();renderMain();}}
 
 function flightForm(f){
   return`
@@ -973,7 +971,7 @@ function hotelsHTML(){
 }
 function setHotelFilter(f){S.hotelFilter=f;save();renderMain();}
 function toggleHotelBooked(id){S.hotels=S.hotels.map(h=>h.id==id?{...h,booked:!h.booked}:h);save();renderMain();}
-function delHotel(id){if(window.confirm('Delete?')){S.hotels=S.hotels.filter(h=>h.id!=id);save();renderMain();}}
+function delHotel(id){if(confirm('Delete?')){S.hotels=S.hotels.filter(h=>h.id!=id);save();renderMain();}}
 
 function hotelForm(h){
   return`
@@ -1053,7 +1051,7 @@ function foodHTML(){
     </div>`).join('')}`;
 }
 function setFoodFilter(f){S.foodFilter=f;save();renderMain();}
-function delFood(id){if(window.confirm('Delete?')){S.food=S.food.filter(f=>f.id!=id);save();renderMain();}}
+function delFood(id){if(confirm('Delete?')){S.food=S.food.filter(f=>f.id!=id);save();renderMain();}}
 function foodForm(f){
   return`
     <div class="g2" style="gap:8px;margin-bottom:8px">
@@ -1130,7 +1128,7 @@ function todoHTML(){
 }
 function setTodoFilter(f){S.todoFilter=f;save();renderMain();}
 function toggleTodo(id){S.todos=S.todos.map(t=>t.id==id?{...t,done:!t.done}:t);save();renderMain();}
-function delTodo(id){if(window.confirm('Delete?')){S.todos=S.todos.filter(t=>t.id!=id);save();renderMain();}}
+function delTodo(id){if(confirm('Delete?')){S.todos=S.todos.filter(t=>t.id!=id);save();renderMain();}}
 
 function todoForm(t){
   return`
@@ -1645,13 +1643,13 @@ function addFxRate(){
 // ════════════════════════════════════════════════
 // INIT
 // ════════════════════════════════════════════════
-// Auth handled by Firebase Auth block below
+renderAll();
 </script>
 
-<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js");</script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/asia-travel-planner/sw.js");</script>
 
 <script>
-// Firebase Auth + Sync — fully isolated
+// Firebase Auth + Sync
 (function() {
   var ALLOWED = ["yozora230@gmail.com", "jsraqueno2@gmail.com", "jlraqueno9@gmail.com", "jsraqueno2@hotmail.com"];
   var AUTH_KEY = '_yz_email';
@@ -1663,13 +1661,13 @@ function addFxRate(){
     messagingSenderId:"285910768960",
     appId:"1:285910768960:web:9f9d5e9880739813af2ea5"
   };
-
   var db = null;
   var appShown = false;
+  var firestoreInit = false;
 
   function isAllowed(email) {
-    return ALLOWED.map(function(e){return e.toLowerCase();})
-                  .indexOf((email||'').toLowerCase()) !== -1;
+    var list = ALLOWED.map(function(e){return e.toLowerCase();});
+    return list.indexOf((email||'').toLowerCase()) !== -1;
   }
 
   function showApp() {
@@ -1695,14 +1693,14 @@ function addFxRate(){
   function applyRemoteState(data) {
     if (!data || !data.state) return;
     var remoteTs = data.updatedAt || 0;
-    var localTs  = parseInt(localStorage.getItem('_fbts') || '0');
-    if (remoteTs < localTs) return; // only skip if remote is strictly older
+    var localTs = parseInt(localStorage.getItem('_fbts') || '0');
+    if (remoteTs <= localTs) return;
     try {
       var parsed = JSON.parse(data.state);
       if (typeof S !== 'undefined') {
-        var currentTab = S.tab; // keep local tab, don't let remote override it
+        var tab = S.tab;
         S = parsed;
-        S.tab = currentTab;
+        S.tab = tab;
         localStorage.setItem('asiatrip26v3', data.state);
         localStorage.setItem('_fbts', remoteTs.toString());
         if (appShown && typeof renderAll === 'function') renderAll();
@@ -1715,23 +1713,20 @@ function addFxRate(){
     var ts = Date.now();
     localStorage.setItem('_fbts', ts.toString());
     try {
-      // Strip tab from synced state so each device keeps its own active tab
-      var stateToSync = JSON.parse(localStorage.getItem('asiatrip26v3') || '{}');
-      delete stateToSync.tab;
+      var state = JSON.parse(localStorage.getItem('asiatrip26v3') || '{}');
+      delete state.tab;
       db.collection('trips').doc('asia2026').set({
-        state: JSON.stringify(stateToSync),
+        state: JSON.stringify(state),
         updatedAt: ts
       });
     } catch(e) {}
   };
 
-  var _firestoreInit = false;
   function initFirestore() {
-    if (_firestoreInit) return;
-    _firestoreInit = true;
+    if (firestoreInit) return;
+    firestoreInit = true;
     try {
       db = firebase.firestore();
-      // No enablePersistence - it breaks real-time onSnapshot updates
       db.collection('trips').doc('asia2026').get().then(function(doc) {
         if (doc.exists) { applyRemoteState(doc.data()); }
         else { window._fbSave(); }
@@ -1747,15 +1742,12 @@ function addFxRate(){
     try {
       if (!firebase.apps.length) firebase.initializeApp(FB_CONF);
 
-      // ── OFFLINE-FIRST: show app immediately if cached email is allowed ──
+      // Offline-first: show app immediately if cached
       var cachedEmail = localStorage.getItem(AUTH_KEY);
       if (cachedEmail && isAllowed(cachedEmail)) {
-        showApp(); // show immediately for offline-first
-        // DO NOT init Firestore here - no auth token yet
-        // onAuthStateChanged will fire shortly and init Firestore with valid token
+        showApp();
       }
 
-      // Sign-in button
       document.getElementById('google-signin-btn').addEventListener('click', function() {
         document.getElementById('auth-loading').textContent = 'Signing in...';
         document.getElementById('auth-err').textContent = '';
@@ -1766,27 +1758,22 @@ function addFxRate(){
         });
       });
 
-      // Auth state listener — runs when online
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           var email = (user.email || '').toLowerCase();
           if (isAllowed(email)) {
-            localStorage.setItem(AUTH_KEY, email); // cache for offline
+            localStorage.setItem(AUTH_KEY, email);
             document.getElementById('auth-loading').textContent = '';
-            initFirestore(); // always init/re-init Firestore once we have a valid auth token
-            if (!appShown) { showApp(); }
+            initFirestore();
+            if (!appShown) showApp();
           } else {
             localStorage.removeItem(AUTH_KEY);
             firebase.auth().signOut();
             showAuth('Access denied. This account is not authorised.');
           }
         } else {
-          // No Firebase session — but if we have a valid cached email, stay shown
           var cached = localStorage.getItem(AUTH_KEY);
-          if (!cached || !isAllowed(cached)) {
-            showAuth();
-          }
-          // else: offline + cached email = stay in app
+          if (!cached || !isAllowed(cached)) showAuth();
         }
       });
 
@@ -1808,5 +1795,6 @@ function addFxRate(){
 <script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
 </body>
 </html>
