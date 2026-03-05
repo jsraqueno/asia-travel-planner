@@ -1755,12 +1755,20 @@ function addFxRate(){
         // onAuthStateChanged will fire shortly and init Firestore with valid token
       }
 
+      // Handle redirect result (called after Google redirects back)
+      firebase.auth().getRedirectResult().then(function(result) {
+        // handled by onAuthStateChanged below
+      }).catch(function() {
+        document.getElementById('auth-loading').textContent = '';
+        document.getElementById('auth-err').textContent = 'Sign-in failed. Try again.';
+      });
+
       // Sign-in button
       document.getElementById('google-signin-btn').addEventListener('click', function() {
         document.getElementById('auth-loading').textContent = 'Signing in...';
         document.getElementById('auth-err').textContent = '';
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).catch(function() {
+        firebase.auth().signInWithRedirect(provider).catch(function() {
           document.getElementById('auth-loading').textContent = '';
           document.getElementById('auth-err').textContent = 'Sign-in failed. Try again.';
         });
