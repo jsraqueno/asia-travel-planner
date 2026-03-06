@@ -42,7 +42,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-@media(max-width:500px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g2{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}}
 @media(max-width:360px){.g3,.g4{grid-template-columns:1fr}}
 /* INPUTS */
 input,textarea,select{background:#050510;border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:9px 12px;font-size:14px;outline:none;width:100%;font-family:inherit;box-sizing:border-box}
