@@ -19,7 +19,7 @@
 }
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
 /* HEADER */
-#hdr{background:linear-gradient(135deg,#08081a 0%,#130826 50%,#08081a 100%);border-bottom:1px solid var(--border2);padding:12px 16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(16px)}
+#hdr{background:linear-gradient(135deg,#08081a 0%,#130826 50%,#08081a 100%);border-bottom:1px solid var(--border2);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));position:sticky;top:0;z-index:100;backdrop-filter:blur(16px)}
 .hdr-top{display:flex;align-items:center;justify-content:space-between}
 .hdr-title{font-size:17px;font-weight:900;background:linear-gradient(135deg,#a78bfa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hdr-sub{font-size:10px;color:var(--muted);margin-top:1px}
@@ -108,6 +108,15 @@ select option{background:#0e0e22}
 .auth-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#fff;color:#1f2937;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:12px;-webkit-appearance:none}
 .auth-err{color:#f87171;font-size:13px;margin-top:10px;min-height:18px}
 .auth-loading{color:#a78bfa;font-size:13px;margin-top:10px}
+
+
+.sg-wrap{position:relative;margin-bottom:4px}
+.sg-inner{overflow-x:auto;display:flex;gap:6px;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sg-inner::-webkit-scrollbar{display:none}
+.sg-arrow{display:none;position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.85);color:#fff;border:none;cursor:pointer;font-size:20px;line-height:28px;text-align:center;z-index:5;padding:0;flex-shrink:0}
+.sg-arrow.sgl{left:-6px}
+.sg-arrow.sgr{right:-6px}
+@media(hover:hover){.sg-arrow{display:block}}
 
 </style>
 </head>
@@ -490,9 +499,7 @@ function dashHTML(){
   ];
 
   return`
-  <div style="background:rgba(8,145,178,.12);border:1px solid rgba(34,211,238,.25);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:12px;line-height:1.6;color:var(--tealS)">
-    📱 <b>iPhone Offline:</b> AirDrop this file to iPhone → Files app → tap Share → <b>Open in Safari</b>. All your data saves automatically in Safari and works completely offline!
-  </div>
+  
   <div class="card" style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(8,145,178,.06));border-color:rgba(124,58,237,.3)">
     <div style="font-size:18px;font-weight:900;margin-bottom:4px">Korea 🇰🇷 • China 🇨🇳 • Japan 🇯🇵 • Thailand 🇹🇭</div>
     <div style="color:var(--muted);font-size:12px">Jacob · Toronto → Asia · Apr 28 – Jun 11, 2026 · 45 days</div>
@@ -658,9 +665,9 @@ function schedHTML(){
   </div>
   <div style="margin-bottom:14px">
     <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">City Group</div>
-    <div style="overflow-x:auto;display:flex;gap:6px;padding-bottom:4px;scrollbar-width:none">
+    <div style="position:relative;margin-bottom:4px"><button class="sg-arrow sgl" onclick="var e=document.getElementById('sgi');e.scrollBy({left:-200,behavior:'smooth'})">&#8249;</button><div id="sgi" class="sg-inner">
       ${SCHED_GROUPS.map(g=>{const cnt=S.sched.filter(s=>s.group===g.name).length;return`<button onclick="setSchedGroup('${g.name.replace(/'/g,"\\'")}') " style="flex-shrink:0;padding:8px 14px;border-radius:10px;border:1px solid ${S.schedGroup===g.name?'var(--accent)':'var(--border2)'};background:${S.schedGroup===g.name?'rgba(124,58,237,.2)':'var(--card2)'};color:${S.schedGroup===g.name?'var(--soft)':'var(--muted)'};cursor:pointer;font-size:11px;font-weight:700;white-space:nowrap">${cf(g.country)} ${g.name}${cnt?` <span style="background:var(--accent);color:#fff;border-radius:5px;padding:1px 5px;font-size:9px">${cnt}</span>`:''}</button>`;}).join('')}
-    </div>
+    </div><button class="sg-arrow sgr" onclick="var e=document.getElementById('sgi');e.scrollBy({left:200,behavior:'smooth'})">&#8250;</button></div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
     <div style="font-weight:800;font-size:14px;color:${col}">${cf(curGroup.country)} ${curGroup.name}</div>
